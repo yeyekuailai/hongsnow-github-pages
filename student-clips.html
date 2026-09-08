@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071018" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Hong Snow" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./assets/app-icons/apple-touch-icon.png" />
+    <title>学员视频 | Hong Lin 鸿宝</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="subpage">
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="./index.html"><span class="brand-mark"><img src="./assets/snowboard-avatar.svg" alt="" /></span><span><strong>Hong Lin 鸿宝</strong><small>Snowboard Coach</small></span></a>
+      <nav class="nav-links"><a href="./index.html">首页</a><a href="./programs.html">课程</a><a href="./student-clips.html">学员视频</a><a href="./about.html">关于我</a><a href="./index.html#booking">预约</a></nav>
+      <div class="language-toggle"><button type="button" class="active" data-lang="zh">中文</button><button type="button" data-lang="en">EN</button></div>
+    </header>
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <p class="section-label">Student Clips</p>
+        <h1>三条 30 秒左右高光片段，展示真实训练状态。</h1>
+        <p>不是摆拍，也不是只放最帅的一帧。视频用于看线路、节奏、速度和下一趟该改的动作。</p>
+      </section>
+      <section class="student-lines">
+        <div class="student-layout">
+          <article class="student-video-card">
+            <video class="student-player" src="./assets/student-highlight-1.mp4" preload="metadata" controls playsinline></video>
+            <div class="clip-controls" aria-label="学员视频切换">
+              <button type="button" class="clip-prev">上一条</button>
+              <button type="button" class="clip-tab active" data-clip-index="0">片段 01</button>
+              <button type="button" class="clip-tab" data-clip-index="1">片段 02</button>
+              <button type="button" class="clip-tab" data-clip-index="2">片段 03</button>
+              <button type="button" class="clip-next">下一条</button>
+            </div>
+            <div class="student-video-caption"><p class="episode">学员训练片段</p><h3>看得见的问题，才改得快。</h3><p>上课时会保留关键片段，用来做课后复盘和下一次训练建议。</p></div>
+          </article>
+          <aside class="coach-notes"><article><span>01</span><h3>路线</h3><p>先看 line choice 和控速。</p></article><article><span>02</span><h3>动作</h3><p>再看重心、板刃和压力。</p></article><article><span>03</span><h3>下一趟</h3><p>最后给一个能马上尝试的动作。</p></article></aside>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

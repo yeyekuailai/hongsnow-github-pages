@@ -1,0 +1,1464 @@
+:root {
+  --ink: #071018;
+  --deep: #102332;
+  --snow: #f7fbff;
+  --ice: #dff4ff;
+  --cyan: #19d3ff;
+  --mint: #63f5c4;
+  --orange: #ff6b2c;
+  --line: rgba(7, 16, 24, 0.14);
+  --glass: rgba(247, 251, 255, 0.84);
+  --shadow: 0 24px 70px rgba(7, 16, 24, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--snow);
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+}
+
+body.is-standalone {
+  padding-top: env(safe-area-inset-top);
+  background: var(--ink);
+}
+
+body.has-welcome {
+  overflow: hidden;
+}
+
+.snow-welcome {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  overflow: hidden;
+  place-items: stretch;
+  color: var(--snow);
+  background: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.snow-welcome.play {
+  animation: welcome-shell 4.6s ease forwards;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.snow-welcome-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 72% 10%, rgba(247, 251, 255, 0.62), transparent 11%),
+    linear-gradient(180deg, #071018 0%, #102332 28%, #bfefff 72%, #f7fbff 100%);
+}
+
+.snow-welcome-copy {
+  position: absolute;
+  z-index: 2;
+  top: max(70px, calc(env(safe-area-inset-top) + 56px));
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  text-shadow: 0 12px 36px rgba(7, 16, 24, 0.28);
+}
+
+.snow-welcome-copy span {
+  display: block;
+  color: var(--mint);
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.snow-welcome-copy strong {
+  display: block;
+  margin-top: 6px;
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: clamp(3.5rem, 16vw, 7rem);
+  line-height: 0.9;
+}
+
+.snow-welcome-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcome-track {
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
+}
+
+.snow-welcome.play .welcome-track {
+  animation: welcome-track 2.6s 0.35s ease-out forwards;
+}
+
+.welcome-rider {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.snow-welcome.play .welcome-rider {
+  animation: welcome-ride 3.65s 0.36s cubic-bezier(0.14, 0.84, 0.2, 1) forwards;
+}
+
+@keyframes welcome-shell {
+  0% {
+    opacity: 1;
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes welcome-track {
+  0% {
+    stroke-dashoffset: 760;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes welcome-ride {
+  0% {
+    opacity: 0;
+    transform: translate(54px, 190px) rotate(-24deg) scale(0.2);
+  }
+  10% {
+    opacity: 1;
+  }
+  38% {
+    transform: translate(154px, 332px) rotate(-17deg) scale(0.48);
+  }
+  68% {
+    transform: translate(242px, 498px) rotate(-10deg) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(332px, 670px) rotate(-5deg) scale(1.55);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 20;
+  top: 18px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: min(1120px, calc(100% - 32px));
+  min-height: 64px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: rgba(247, 251, 255, 0.78);
+  box-shadow: 0 12px 40px rgba(7, 16, 24, 0.12);
+  backdrop-filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.brand,
+.language-toggle,
+.hero-actions,
+.channel-list a,
+footer,
+footer div {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--snow);
+  background: var(--ink);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.brand-mark img {
+  width: 34px;
+  height: 34px;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  max-width: 190px;
+  overflow: hidden;
+  color: var(--ink);
+  line-height: 1.05;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand small {
+  color: rgba(7, 16, 24, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.language-toggle {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(44px, 1fr));
+  gap: 3px;
+  min-width: 104px;
+  padding: 3px;
+  border: 1px solid rgba(7, 16, 24, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.language-toggle button {
+  min-width: 0;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  color: rgba(7, 16, 24, 0.62);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.language-toggle button.active {
+  color: var(--snow);
+  background: var(--ink);
+}
+
+.menu-toggle {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(7, 16, 24, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.62);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--ink);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.site-header.menu-open .menu-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.site-header.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.menu-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.nav-links {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 12px;
+  display: grid;
+  gap: 6px;
+  min-width: 220px;
+  padding: 10px;
+  border: 1px solid rgba(7, 16, 24, 0.1);
+  border-radius: 8px;
+  background: rgba(247, 251, 255, 0.96);
+  box-shadow: 0 18px 52px rgba(7, 16, 24, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.site-header.menu-open .nav-links {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-links a,
+.nav-install {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  border: 0;
+  border-radius: 6px;
+  color: rgba(7, 16, 24, 0.72);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 800;
+  padding: 0 12px;
+  text-align: left;
+}
+
+.nav-install {
+  color: var(--ink);
+  background: rgba(99, 245, 196, 0.26);
+}
+
+.nav-links a,
+.nav-install,
+.menu-toggle,
+.nav-cta,
+.button,
+.booking-form button {
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.app-install {
+  position: fixed;
+  z-index: 30;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  display: none;
+  align-items: center;
+  gap: 12px;
+  width: min(360px, calc(100% - 32px));
+  padding: 12px;
+  border: 1px solid rgba(247, 251, 255, 0.5);
+  border-radius: 8px;
+  color: var(--snow);
+  background: rgba(7, 16, 24, 0.92);
+  box-shadow: 0 18px 52px rgba(7, 16, 24, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.app-install.show {
+  display: flex;
+}
+
+.app-install img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+}
+
+.app-install strong,
+.app-install small {
+  display: block;
+}
+
+.app-install strong {
+  font-size: 0.96rem;
+}
+
+.app-install small {
+  color: rgba(247, 251, 255, 0.72);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.app-install button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--mint);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0 14px;
+}
+
+.app-install .dismiss-install {
+  width: 34px;
+  min-height: 34px;
+  padding: 0;
+  color: var(--snow);
+  background: rgba(247, 251, 255, 0.14);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-install:hover,
+.nav-install:focus-visible,
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  color: var(--ink);
+  background: rgba(7, 16, 24, 0.06);
+}
+
+.nav-cta,
+.button,
+.booking-form button {
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.nav-cta {
+  padding: 13px 18px;
+  color: var(--snow);
+  background: var(--ink);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 88svh;
+  overflow: hidden;
+  color: var(--snow);
+}
+
+.hero-image,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(7, 16, 24, 0.78) 0%, rgba(7, 16, 24, 0.4) 38%, rgba(7, 16, 24, 0.08) 74%),
+    linear-gradient(0deg, rgba(7, 16, 24, 0.88) 0%, rgba(7, 16, 24, 0) 42%);
+}
+
+.hero::after {
+  position: absolute;
+  right: -8%;
+  bottom: 11%;
+  width: 76%;
+  height: 28%;
+  border-top: 4px solid var(--cyan);
+  border-radius: 58% 0 0 0;
+  opacity: 0.75;
+  transform: rotate(-9deg);
+  content: "";
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  align-self: start;
+  width: min(680px, calc(100% - 40px));
+  margin-left: max(20px, calc((100% - 1120px) / 2));
+  padding-top: clamp(132px, 18vh, 196px);
+}
+
+.kicker,
+.section-label,
+.episode,
+.course-tag {
+  color: var(--cyan);
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.94;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 18px;
+  font-size: clamp(3.8rem, 12vw, 8.7rem);
+}
+
+.hero-title-main,
+.hero-title-en {
+  display: block;
+}
+
+.hero-title-main span {
+  display: block;
+}
+
+.hero-title-en {
+  margin-top: 0.16em;
+  color: var(--mint);
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+  font-size: 0.28em;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: none;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2.25rem, 5.4vw, 4.8rem);
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.hero-copy {
+  max-width: 590px;
+  color: #86ffdc;
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  line-height: 1.62;
+  text-shadow: 0 2px 14px rgba(7, 16, 24, 0.92), 0 1px 2px rgba(7, 16, 24, 0.9);
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 24px;
+}
+
+.button.primary {
+  color: var(--ink);
+  background: var(--mint);
+}
+
+.button.ghost {
+  border: 1px solid rgba(247, 251, 255, 0.6);
+  color: var(--snow);
+  background: rgba(247, 251, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.nav-cta:hover,
+.button:hover,
+.booking-form button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-panel {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(560px, 100%);
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 8px;
+  background: rgba(247, 251, 255, 0.13);
+  backdrop-filter: blur(16px);
+}
+
+.hero-panel div {
+  padding: 12px 14px;
+}
+
+.hero-panel div + div {
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.metric {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.62rem;
+  font-weight: 800;
+}
+
+.label {
+  color: rgba(247, 251, 255, 0.78);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+section:not(.hero) {
+  padding: 72px max(20px, calc((100% - 1120px) / 2));
+}
+
+.band {
+  background: var(--ice);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 44px;
+}
+
+.intro-copy {
+  max-width: 850px;
+}
+
+.intro p,
+.booking p,
+.course-card p,
+.price-card p,
+.method-steps p,
+.student-video-caption p,
+.coach-notes p,
+.video-feature p,
+.channel-list span,
+blockquote p,
+.subpage-hero p {
+  color: rgba(7, 16, 24, 0.68);
+  line-height: 1.72;
+}
+
+.section-heading {
+  max-width: 790px;
+  margin-bottom: 24px;
+}
+
+.credential-layout,
+.course-grid,
+.pricing-grid,
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.credential-layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.88fr);
+  align-items: stretch;
+}
+
+.credential-copy,
+.credential-images figure {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(7, 16, 24, 0.07);
+}
+
+.credential-copy {
+  padding: 24px;
+}
+
+.credential-copy h3 {
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 0.98;
+}
+
+.credential-copy p {
+  color: rgba(7, 16, 24, 0.68);
+  line-height: 1.72;
+}
+
+.credential-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.credential-images figure,
+.credential-note {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 440px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.credential-images img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.credential-images figure:first-child img {
+  object-position: center 36%;
+}
+
+.credential-images figcaption {
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+  color: rgba(7, 16, 24, 0.68);
+  font-weight: 800;
+}
+
+.credential-note {
+  align-content: end;
+  grid-template-rows: auto;
+  padding: 24px;
+  color: var(--snow);
+  background:
+    linear-gradient(150deg, rgba(16, 35, 50, 0.96), rgba(7, 16, 24, 0.9)),
+    url("./assets/hero-snowboard-coach.png") center / cover;
+}
+
+.credential-note span,
+.flyer-card span {
+  color: var(--mint);
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.credential-note h3,
+.flyer-card h3 {
+  margin: 18px 0 12px;
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.98;
+}
+
+.credential-note p {
+  color: rgba(247, 251, 255, 0.76);
+  line-height: 1.72;
+}
+
+.course-card,
+blockquote {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(7, 16, 24, 0.07);
+}
+
+.course-card {
+  padding: 22px;
+}
+
+.course-card.featured {
+  color: var(--snow);
+  background: var(--deep);
+  transform: translateY(-16px);
+}
+
+.course-card.featured p,
+.course-card.featured li {
+  color: rgba(247, 251, 255, 0.76);
+}
+
+.course-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-card li {
+  color: rgba(7, 16, 24, 0.64);
+}
+
+.course-card li::before {
+  color: var(--orange);
+  content: ">";
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.pricing {
+  background:
+    linear-gradient(180deg, rgba(247, 251, 255, 0.94), rgba(231, 241, 248, 0.88)),
+    var(--ice);
+}
+
+.price-card {
+  position: relative;
+  min-height: 260px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(7, 16, 24, 0.07);
+}
+
+.price-card.featured {
+  color: var(--snow);
+  background: var(--deep);
+}
+
+.price-card.featured .price-type,
+.price-card.featured p,
+.price-card.featured li {
+  color: rgba(247, 251, 255, 0.78);
+}
+
+.price-gesture {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.price-type {
+  margin: 0 0 8px;
+  color: rgba(7, 16, 24, 0.58);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.price-card h3 {
+  margin: 0;
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: clamp(2.3rem, 3.6vw, 3.8rem);
+  line-height: 0.92;
+}
+
+.price-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.price-card li {
+  color: rgba(7, 16, 24, 0.66);
+  line-height: 1.55;
+}
+
+.price-card li::before {
+  color: var(--orange);
+  content: ">";
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.method {
+  position: relative;
+  overflow: hidden;
+}
+
+.method-line {
+  position: absolute;
+  right: -7%;
+  top: 132px;
+  width: 66%;
+  height: 34%;
+  border-bottom: 5px solid var(--orange);
+  border-radius: 0 0 0 76%;
+  opacity: 0.35;
+  transform: rotate(-5deg);
+}
+
+.method-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.method-steps article {
+  min-height: 150px;
+  padding: 16px;
+  border-left: 2px solid rgba(7, 16, 24, 0.18);
+  background: rgba(247, 251, 255, 0.56);
+}
+
+.method-steps span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 20px;
+}
+
+.video-feature {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  padding: 34px;
+  border-radius: 8px;
+  color: var(--snow);
+  background:
+    linear-gradient(135deg, rgba(7, 16, 24, 0.94), rgba(16, 35, 50, 0.68)),
+    url("./assets/hero-snowboard-coach.png") center / cover;
+  box-shadow: var(--shadow);
+}
+
+.video-feature h3 {
+  max-width: 540px;
+  margin-top: 230px;
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 800;
+}
+
+.video-feature p {
+  max-width: 520px;
+  color: rgba(247, 251, 255, 0.78);
+}
+
+.play-button {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border: 1px solid rgba(247, 251, 255, 0.52);
+  border-radius: 50%;
+  background: rgba(247, 251, 255, 0.1);
+}
+
+.play-button::before {
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid var(--snow);
+  content: "";
+}
+
+.channel-list {
+  display: grid;
+  gap: 10px;
+}
+
+.material-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.flyer-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--ice);
+}
+
+.flyer-card p {
+  color: rgba(7, 16, 24, 0.68);
+  line-height: 1.72;
+}
+
+.channel-list a {
+  min-height: 96px;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.channel-list a::after {
+  color: var(--orange);
+  content: "↗";
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+blockquote {
+  margin: 0;
+  padding: 22px;
+}
+
+blockquote p {
+  min-height: 64px;
+  font-size: 1.08rem;
+}
+
+cite {
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.student-lines {
+  background: #ffffff;
+}
+
+.student-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: 16px;
+}
+
+.student-video-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.student-video-card video,
+.student-player-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  object-fit: cover;
+}
+
+.student-player-placeholder {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 36px;
+  color: var(--snow);
+  background:
+    linear-gradient(135deg, rgba(113, 212, 197, 0.28), rgba(238, 111, 87, 0.2)),
+    url("./assets/hero-snowboard-coach.png") center / cover;
+}
+
+.student-player-placeholder::before {
+  content: "";
+  position: absolute;
+}
+
+.student-player-placeholder span,
+.student-player-placeholder strong,
+.student-player-placeholder p {
+  max-width: 520px;
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(7, 16, 24, 0.65);
+}
+
+.student-player-placeholder span {
+  color: var(--mint);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.student-player-placeholder strong {
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.student-player-placeholder p {
+  color: rgba(247, 251, 255, 0.84);
+}
+
+.clip-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(247, 251, 255, 0.16);
+  background: rgba(247, 251, 255, 0.06);
+}
+
+.clip-controls button {
+  min-height: 38px;
+  border: 1px solid rgba(247, 251, 255, 0.24);
+  border-radius: 999px;
+  color: rgba(247, 251, 255, 0.82);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0 13px;
+}
+
+.clip-controls button.active {
+  color: var(--ink);
+  background: var(--mint);
+  border-color: var(--mint);
+}
+
+.student-video-caption {
+  padding: 22px;
+  color: var(--snow);
+}
+
+.student-video-caption h3 {
+  font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 0.98;
+}
+
+.student-video-caption p:not(.episode) {
+  color: rgba(247, 251, 255, 0.76);
+}
+
+.coach-notes {
+  display: grid;
+  align-self: start;
+  gap: 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(7, 16, 24, 0.12);
+  border-radius: 8px;
+  background: rgba(247, 251, 255, 0.82);
+  box-shadow: 0 18px 38px rgba(7, 16, 24, 0.08);
+}
+
+.coach-notes article {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 4px 12px;
+  padding: 11px 0;
+  border: 0;
+  background: transparent;
+}
+
+.coach-notes article + article {
+  border-top: 1px solid rgba(7, 16, 24, 0.1);
+}
+
+.coach-notes span {
+  display: grid;
+  grid-row: 1 / span 2;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: 2px 0 0;
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--mint);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.coach-notes h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.coach-notes p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.subpage-main {
+  padding-top: 110px;
+}
+
+.subpage-hero {
+  padding: 120px max(20px, calc((100% - 1120px) / 2)) 64px;
+  background: var(--ice);
+}
+
+.subpage-hero h1 {
+  max-width: 920px;
+  color: var(--ink);
+  font-size: clamp(4rem, 10vw, 8rem);
+}
+
+.subpage-hero p:not(.section-label) {
+  max-width: 720px;
+  font-size: 1.15rem;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.75fr);
+  gap: 32px;
+  color: var(--snow);
+  background: var(--ink);
+}
+
+.booking h2 {
+  color: var(--snow);
+}
+
+.booking p {
+  max-width: 620px;
+  color: rgba(247, 251, 255, 0.76);
+}
+
+.booking-form {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid rgba(247, 251, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(247, 251, 255, 0.08);
+}
+
+.hidden-field {
+  display: none;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 8px;
+  color: rgba(247, 251, 255, 0.78);
+  font-weight: 700;
+}
+
+.field-label.required::after {
+  color: #ff5a5f;
+  content: " *";
+  font-weight: 800;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  border: 1px solid rgba(247, 251, 255, 0.24);
+  border-radius: 6px;
+  color: var(--snow);
+  background: rgba(7, 16, 24, 0.5);
+  padding: 12px;
+  outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(25, 211, 255, 0.16);
+}
+
+.booking-form button {
+  min-height: 48px;
+  color: var(--ink);
+  background: var(--mint);
+}
+
+.form-note {
+  min-height: 24px;
+  margin: 0;
+  color: var(--mint);
+  font-weight: 700;
+}
+
+footer {
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px max(20px, calc((100% - 1120px) / 2));
+  background: #ffffff;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer div {
+  gap: 18px;
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    top: 10px;
+    width: calc(100% - 20px);
+    border-radius: 22px;
+  }
+
+  .language-toggle {
+    margin-left: auto;
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-content {
+    align-self: start;
+    margin: 0 20px;
+    padding-top: 164px;
+  }
+
+  h1 {
+    font-size: clamp(2.9rem, 13vw, 5rem);
+  }
+
+  .hero-title-en {
+    font-size: 0.32em;
+  }
+
+  .hero-panel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .hero-panel div {
+    padding: 10px 11px;
+  }
+
+  .hero-panel div + div {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .metric {
+    font-size: 1.42rem;
+  }
+
+  .label {
+    font-size: 0.66rem;
+    line-height: 1.25;
+  }
+
+  section:not(.hero) {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .intro,
+  .credential-layout,
+  .credential-images,
+  .course-grid,
+  .pricing-grid,
+  .method-steps,
+  .student-layout,
+  .content-layout,
+  .proof-grid,
+  .booking {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card.featured {
+    transform: none;
+  }
+
+  .method-steps article {
+    min-height: 0;
+    padding: 15px 18px;
+  }
+
+  .method-steps span {
+    margin-bottom: 14px;
+  }
+
+  .video-feature {
+    min-height: 320px;
+  }
+
+  .video-feature h3 {
+    margin-top: 160px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand small,
+  .nav-cta {
+    display: none;
+  }
+
+  .language-toggle button {
+    height: 32px;
+  }
+
+  .site-header {
+    min-height: 58px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 18px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .course-card,
+  .video-feature,
+  .booking-form,
+  blockquote {
+    padding: 18px;
+  }
+
+  .app-install {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .app-install button:not(.dismiss-install) {
+    align-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

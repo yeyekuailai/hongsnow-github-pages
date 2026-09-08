@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071018" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Hong Snow" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./assets/app-icons/apple-touch-icon.png" />
+    <title>Hong Lin 鸿宝 | AASI 单板滑雪教学</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="snow-welcome" aria-label="Welcome to the snow">
+      <div class="snow-welcome-sky" aria-hidden="true"></div>
+      <div class="snow-welcome-copy">
+        <span>Hong Snow</span>
+        <strong>Welcome to the snow</strong>
+      </div>
+      <svg class="snow-welcome-scene" viewBox="0 0 420 760" aria-hidden="true">
+        <defs>
+          <linearGradient id="welcomeSky" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#102332" />
+            <stop offset="0.56" stop-color="#dff4ff" />
+            <stop offset="1" stop-color="#f7fbff" />
+          </linearGradient>
+          <linearGradient id="welcomeSlope" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" />
+            <stop offset="1" stop-color="#bdeaff" />
+          </linearGradient>
+        </defs>
+        <rect width="420" height="760" fill="url(#welcomeSky)" />
+        <circle cx="340" cy="92" r="34" fill="#f7fbff" opacity="0.75" />
+        <path d="M0 390 98 250l70 96 88-168 164 228v354H0Z" fill="#dff4ff" />
+        <path d="M0 448 126 318l48 58 86-112 160 194v302H0Z" fill="#f7fbff" />
+        <path class="welcome-track" d="M60 198 C126 292 180 390 232 492 C270 566 320 646 390 724" fill="none" stroke="#19d3ff" stroke-width="6" stroke-linecap="round" opacity="0.75" />
+        <path d="M0 540 C110 486 230 550 420 476 V760H0Z" fill="url(#welcomeSlope)" />
+        <g class="welcome-rider">
+          <g class="rider-shadow">
+            <ellipse cx="0" cy="52" rx="62" ry="10" fill="#071018" opacity="0.2" />
+          </g>
+          <path d="M-72 46 C-26 72 44 74 92 42" fill="none" stroke="#071018" stroke-width="12" stroke-linecap="round" />
+          <path d="M-45 35 C-8 48 38 48 72 30" fill="none" stroke="#19d3ff" stroke-width="6" stroke-linecap="round" />
+          <path d="M-18 -24 10 22 44 4" fill="none" stroke="#ff6b2c" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M-38 -22 -2 24 28 48" fill="none" stroke="#63f5c4" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M-28 -76 C-44 -42 -28 -18 2 -14 C36 -10 52 -34 36 -62 C22 -90 -12 -98 -28 -76Z" fill="#f7fbff" />
+          <path d="M-36 -72 C-8 -104 34 -86 50 -58" fill="none" stroke="#ff2d2d" stroke-width="20" stroke-linecap="round" />
+          <path d="M-46 -64 -76 -78 M48 -56 78 -66" stroke="#ff2d2d" stroke-width="8" stroke-linecap="round" />
+          <path d="M-18 -56 H28" stroke="#071018" stroke-width="10" stroke-linecap="round" />
+          <path d="M-4 -22 20 -54" stroke="#63f5c4" stroke-width="9" stroke-linecap="round" />
+        </g>
+      </svg>
+    </div>
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="./assets/snowboard-avatar.svg" alt="" />
+        </span>
+        <span>
+          <strong>Hong 一块钢铁腹肌</strong>
+          <small>Snowboard Coach</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links" id="site-menu" aria-label="页面导航">
+        <a data-nav="home" href="./index.html">首页</a>
+        <a data-nav="programs" href="./programs.html">课程</a>
+        <a data-nav="clips" href="./student-clips.html">学员视频</a>
+        <a data-nav="about" href="./about.html">关于我</a>
+        <a data-nav="pricing" href="#pricing">价格</a>
+        <button data-nav="install" type="button" class="nav-install install-web-app">安装App</button>
+        <a data-nav="book" href="#booking">预约</a>
+      </nav>
+      <div class="language-toggle" aria-label="语言切换">
+        <button type="button" data-lang="zh">中文</button>
+        <button type="button" class="active" data-lang="en">EN</button>
+      </div>
+      <a class="nav-cta" href="#booking">约体验课</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <video
+          class="hero-image"
+          src="./assets/riding-clip.mp4"
+          poster="./assets/hero-snowboard-coach.png"
+          data-start="12"
+          data-end="22"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-label="Hong Lin 的单板滑雪实拍片段"
+        ></video>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="kicker">AASI Level II Riding Passed / Weekend Snowboard Coaching</p>
+          <h1 id="hero-title">
+            <span class="hero-title-main">
+              <span>真正的自由</span>
+              <span>来自掌控</span>
+            </span>
+            <span class="hero-title-en">Ride with Control</span>
+          </h1>
+          <p class="hero-copy">
+            从第一次落叶飘，到自信刻滑。基于 AASI 教学体系，帮助你建立稳定、可控的滑行。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#booking">约我上雪</a>
+            <a class="button ghost" href="#content">看训练栏目</a>
+          </div>
+          <aside class="hero-panel" aria-label="近期数据">
+            <div>
+              <span class="metric">L2</span>
+              <span class="label">AASI Riding 已通过</span>
+            </div>
+            <div>
+              <span class="metric">L1</span>
+              <span class="label">AASI 单板认证教练</span>
+            </div>
+            <div>
+              <span class="metric">周末</span>
+              <span class="label">雪场教学与跟拍</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="intro band">
+        <div class="section-label">Coach Profile</div>
+        <div class="intro-copy">
+          <h2>会跟拍、会复盘，也按 AASI 标准看动作。</h2>
+          <p>
+            训练不是堆术语。每节课都会先看站姿、重心、视线、板刃和转弯阶段，再把问题拆成可以当天练起来的小目标。你会知道为什么摔、怎么改、下一趟该盯哪一个动作。
+          </p>
+        </div>
+      </section>
+
+      <section class="credentials" aria-labelledby="credentials-title">
+        <div class="section-heading">
+          <p class="section-label">Verified Background</p>
+          <h2 id="credentials-title">真实资料做背书，教学方法不靠玄学。</h2>
+        </div>
+        <div class="credential-layout">
+          <article class="credential-copy">
+            <h3>AASI Level II Riding Passed / Level I Certified</h3>
+            <p>
+              资料显示 Hong Lin 于 2026 年 2 月通过 AASI Certified Level II Snowboard Riding assessment，并在 2024 年 2 月通过 AASI Certified Level I Snowboard assessment。
+            </p>
+            <p>
+              Level II Riding 评估覆盖高级地形中的技术基本功整合、turn shape、turn size、line、TID 调整以及 park / bumps / off-piste 等项目。主页只展示与教学可信度相关的信息。
+            </p>
+          </article>
+          <div class="credential-images">
+            <figure>
+              <img src="./assets/aasi-certification-l1-hong-lin.jpg" alt="Hong Lin 的 AASI Level 1 证书照片" />
+              <figcaption>AASI Level 1 认证</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="courses" id="courses" aria-labelledby="courses-title">
+        <div class="section-heading">
+          <p class="section-label">Lesson Menu</p>
+          <h2 id="courses-title">按你的身体素质、能力、进展定制最适合你的训练课程。</h2>
+        </div>
+        <div class="course-grid">
+          <article class="course-card">
+            <span class="course-tag">Beginner</span>
+            <h3>五节课目标：稳定 S 弯</h3>
+            <p>从装备、站姿、推坡、落叶飘到基础换刃，重点先建立安全感和速度控制。</p>
+            <ul>
+              <li>周末雪场教学</li>
+              <li>摔倒与起身保护</li>
+              <li>课后动作清单</li>
+            </ul>
+          </article>
+          <article class="course-card featured">
+            <span class="course-tag">Video Review</span>
+            <h3>GoPro 跟拍 + 动作复盘</h3>
+            <p>全天跟拍素材加课程总结，用慢镜头看你在换刃、压刃、控速时到底发生了什么。</p>
+            <ul>
+              <li>跟拍视频素材</li>
+              <li>重点错误截图标注</li>
+              <li>下一次训练建议</li>
+            </ul>
+          </article>
+          <article class="course-card">
+            <span class="course-tag">Progression</span>
+            <h3>换刃到刻滑进阶</h3>
+            <p>用 AASI 技术基本功拆解重心、压力、板刃角和转板方式，让你知道每一趟为什么变好。</p>
+            <ul>
+              <li>转弯阶段分析</li>
+              <li>重心与压力练习</li>
+              <li>板刃控制训练</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="method band" id="method" aria-labelledby="method-title">
+        <div class="method-line" aria-hidden="true"></div>
+        <div class="section-heading">
+          <p class="section-label">AASI-based Method</p>
+          <h2 id="method-title">用六个技术基本功，稳定滑好每一个弯。</h2>
+        </div>
+        <div class="method-steps">
+          <article>
+            <span>01</span>
+            <h3>纵向重心</h3>
+            <p>看重心和支撑面在板长方向的关系，解决前后脚压力失衡。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>横向重心</h3>
+            <p>看重心如何跨过板宽，帮助换刃更顺，不被板刃绊住。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>压力大小</h3>
+            <p>判断压力建立的时机、大小和持续时间，让控速不只靠刹车。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>板刃倾角</h3>
+            <p>用 inclination 和 angulation 控制板刃，找到稳定抓雪的角度。</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>转板</h3>
+            <p>用屈伸和身体旋转控制板的 pivot，减少只靠上身硬拧。</p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>板身扭转</h3>
+            <p>用脚踝、膝盖和髋部控制 board twist，让换刃更细腻。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="section-heading">
+          <p class="section-label">Pricing Menu</p>
+          <h2 id="pricing-title">Pick the format that fits your crew, mountain day, and pace.</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-gesture" aria-hidden="true">☝🏿</span>
+            <p class="price-type">Private Hourly</p>
+            <h3>$90/h</h3>
+            <ul>
+              <li>2-hour lesson, Big Snow or mountain days</li>
+              <li>Lesson recap video</li>
+            </ul>
+          </article>
+          <article class="price-card">
+            <span class="price-gesture" aria-hidden="true">🤌🏿</span>
+            <p class="price-type">Semi-private Hourly</p>
+            <h3>$150/h</h3>
+            <ul>
+              <li>2-hour lesson, mountain days</li>
+              <li>Lesson recap video</li>
+            </ul>
+          </article>
+          <article class="price-card featured">
+            <span class="price-gesture" aria-hidden="true">🤞🏿</span>
+            <p class="price-type">Private Day</p>
+            <h3>$400/day</h3>
+            <ul>
+              <li>5-hour day, mountain terrain</li>
+              <li>GoPro follow-cam</li>
+            </ul>
+          </article>
+          <article class="price-card">
+            <span class="price-gesture" aria-hidden="true">🫰🏿</span>
+            <p class="price-type">Semi-private Day</p>
+            <h3>$680/day</h3>
+            <ul>
+              <li>5-hour day, mountain terrain</li>
+              <li>GoPro follow-cam</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="student-lines" id="content" aria-labelledby="content-title">
+        <div class="section-heading">
+          <p class="section-label">Student Lines</p>
+          <h2 id="content-title">真实学员片段，比承诺更有说服力。</h2>
+        </div>
+        <div class="student-layout">
+          <article class="student-video-card">
+            <video
+              class="student-player"
+              src="./assets/student-highlight-1.mp4"
+              preload="metadata"
+              controls
+              playsinline
+              aria-label="学员单板滑雪训练片段"
+            ></video>
+            <div class="clip-controls" aria-label="学员视频切换">
+              <button type="button" class="clip-prev">上一条</button>
+              <button type="button" class="clip-tab active" data-clip-index="0">片段 01</button>
+              <button type="button" class="clip-tab" data-clip-index="1">片段 02</button>
+              <button type="button" class="clip-tab" data-clip-index="2">片段 03</button>
+              <button type="button" class="clip-next">下一条</button>
+            </div>
+            <div class="student-video-caption">
+              <p class="episode">学员训练片段</p>
+              <h3>先看线路，再看动作。</h3>
+              <p>上课时我会把学员的滑行拍下来，用真实路线、速度和地形讨论下一趟怎么改。</p>
+            </div>
+          </article>
+          <aside class="coach-notes">
+            <article>
+              <span>01</span>
+              <h3>当场调整</h3>
+              <p>不把问题堆到课后才说。能在下一趟试的动作，就当场改。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>视频复盘</h3>
+              <p>跟拍视频会保留关键片段，课后用截图或文字标出最值得练的一两个点。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>进阶路线</h3>
+              <p>新手先稳住 S 弯，进阶再追求刻滑、动态平衡和更复杂地形。</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="booking" id="booking" aria-labelledby="booking-title">
+        <div>
+          <p class="section-label">Book A Session</p>
+          <h2 id="booking-title">发来你的阶段和目标，约一个周末上雪。</h2>
+          <p>
+            适合想系统入门、突破换刃或开始练更稳定 S 弯的单板玩家。填写你的阶段、常去雪场和目标，我会给出课程建议。
+          </p>
+        </div>
+        <form
+          class="booking-form"
+          name="snowboard-booking"
+          method="POST"
+        >
+          <input type="hidden" name="subject" value="新的单板滑雪课程预约" />
+          <p class="hidden-field">
+            <label>不要填写这一栏 <input name="bot-field" /></label>
+          </p>
+          <label>
+            <span class="field-label required">你的名字</span>
+            <input type="text" name="name" placeholder="怎么称呼你" required />
+          </label>
+          <label>
+            <span class="field-label required">当前阶段</span>
+            <select name="level" required>
+              <option>纯新手 beginner</option>
+              <option>新手入门进阶 intermediate</option>
+              <option>高级地形动态滑行 advance</option>
+            </select>
+          </label>
+          <label>
+            <span class="field-label required">邮箱</span>
+            <input type="email" name="email" placeholder="方便接收课程确认" required />
+          </label>
+          <label>
+            <span class="field-label">电话</span>
+            <input type="tel" name="phone" placeholder="可选，方便紧急联系" />
+          </label>
+          <label>
+            <span class="field-label required">微信号</span>
+            <input type="text" name="wechat" placeholder="优先用于沟通预约时间" required />
+          </label>
+          <label>
+            <span class="field-label required">训练目标</span>
+            <textarea name="goal" rows="4" placeholder="比如：换刃更稳、刻滑不甩尾、学 ollie" required></textarea>
+          </label>
+          <button type="submit">发送预约意向</button>
+          <p class="form-note" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Hong Lin 鸿宝 Snowboard Coaching</p>
+      <div>
+        <a href="#top">回到顶部</a>
+        <a
+          href="https://xhslink.com/m/4YDysfqvlFo"
+          target="_blank"
+          rel="noopener"
+        >关注小红书</a>
+      </div>
+    </footer>
+
+    <script src="./google-sheets-config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
