@@ -17,9 +17,9 @@ const isStandalone =
   window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
 const isNativeApp = ["capacitor:", "ionic:"].includes(window.location.protocol);
 const studentClips = [
-  "./assets/student-highlight-1.mp4",
-  "./assets/student-highlight-2.mp4",
-  "./assets/student-highlight-3.mp4",
+  "./assets/student-highlight-1.mp4?v=20260909-2",
+  "./assets/student-highlight-2.mp4?v=20260909-2",
+  "./assets/student-highlight-3.mp4?v=20260909-2",
 ];
 let activeClip = 0;
 
@@ -333,7 +333,7 @@ const createInstallBanner = () => {
   banner.className = "app-install";
   banner.setAttribute("aria-live", "polite");
   banner.innerHTML = `
-    <img src="./assets/snowboard-avatar.svg" alt="" />
+    <img src="./assets/snowboard-avatar.svg?v=20260909-2" alt="" />
     <div>
       <strong></strong>
       <small></small>
@@ -432,7 +432,7 @@ window.addEventListener("appinstalled", () => {
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+    navigator.serviceWorker.register("./service-worker.js?v=20260909-2").catch(() => {});
   });
 }
 

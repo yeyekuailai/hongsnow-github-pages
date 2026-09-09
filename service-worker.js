@@ -1,20 +1,20 @@
-const CACHE_NAME = "honglin-snowboard-v11";
+const CACHE_NAME = "honglin-snowboard-v12";
 const APP_SHELL = [
-  "/",
-  "/index.html",
-  "/programs.html",
-  "/student-clips.html",
-  "/about.html",
-  "/styles.css",
-  "/google-sheets-config.js",
-  "/script.js",
-  "/manifest.webmanifest",
-  "/assets/snowboard-avatar.svg",
-  "/assets/app-icons/icon-192.png",
-  "/assets/app-icons/icon-512.png",
-  "/assets/app-icons/apple-touch-icon.png",
-  "/assets/hero-snowboard-coach.png",
-  "/assets/aasi-certification-l1-hong-lin.jpg"
+  "./",
+  "./index.html",
+  "./programs.html",
+  "./student-clips.html",
+  "./about.html",
+  "./styles.css?v=20260909-2",
+  "./google-sheets-config.js?v=20260909-2",
+  "./script.js?v=20260909-2",
+  "./manifest.webmanifest",
+  "./assets/snowboard-avatar.svg?v=20260909-2",
+  "./assets/app-icons/icon-192.png",
+  "./assets/app-icons/icon-512.png",
+  "./assets/app-icons/apple-touch-icon.png",
+  "./assets/hero-snowboard-coach.png",
+  "./assets/aasi-certification-l1-hong-lin.jpg?v=20260909-2"
 ];
 
 self.addEventListener("install", (event) => {
@@ -53,7 +53,11 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
           return response;
         })
-        .catch(() => caches.match(request).then((cached) => cached || caches.match("/index.html")))
+        .catch(() =>
+          caches
+            .match(request)
+            .then((cached) => cached || caches.match(new URL("./index.html", self.registration.scope).toString()))
+        )
     );
     return;
   }
