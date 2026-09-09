@@ -1,4 +1,4 @@
-const CACHE_NAME = "honglin-snowboard-v10";
+const CACHE_NAME = "honglin-snowboard-v11";
 const APP_SHELL = [
   "/",
   "/index.html",

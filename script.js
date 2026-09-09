@@ -36,7 +36,7 @@ const translations = [
   [".kicker", "AASI Level II Riding Passed / Weekend Snowboard Coaching", "AASI Level II Riding Passed / Weekend Snowboard Coaching"],
   [
     "#hero-title",
-    '<span class="hero-title-main"><span>真正的自由</span><span>来自掌控</span></span><span class="hero-title-en">Ride with Control</span>',
+    '<span class="hero-title-main"><span>真正的自由</span><span>来自掌控</span></span>',
     '<span class="hero-title-main"><span>Real freedom</span><span>comes from control</span></span><span class="hero-title-en">Ride with Control</span>',
     "html"
   ],
@@ -130,7 +130,7 @@ const translations = [
   [".student-video-caption h3", "先看线路，再看动作。", "Read the line first, then the movement."],
   [".student-video-caption p:last-child", "上课时我会把学员的滑行拍下来，用真实路线、速度和地形讨论下一趟怎么改。", "During lessons, we film real runs and use line, speed, and terrain to decide what to adjust on the next lap."],
   [".coach-notes article:nth-child(1) h3", "当场调整", "Adjust on the spot"],
-  [".coach-notes article:nth-child(1) p", "不把问题堆到课后才说。能在下一趟试的动作，就当场改。", "We do not save every problem for later. If a cue can be tested on the next run, we try it right there."],
+  [".coach-notes article:nth-child(1) p", "充分利用排队和坐缆车的时间讨论问题。能在下一趟试的动作，就当场改。", "We use lift lines and chairlift time to talk through problems. If a cue can be tested on the next run, we try it right there."],
   [".coach-notes article:nth-child(2) h3", "视频复盘", "Video review"],
   [".coach-notes article:nth-child(2) p", "跟拍视频会保留关键片段，课后用截图或文字标出最值得练的一两个点。", "Key follow-cam clips become screenshots and notes around the one or two points worth practicing next."],
   [".coach-notes article:nth-child(3) h3", "进阶路线", "Progression path"],
