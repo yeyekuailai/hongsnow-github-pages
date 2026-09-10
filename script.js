@@ -16,10 +16,12 @@ let deferredInstallPrompt = null;
 const isStandalone =
   window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
 const isNativeApp = ["capacitor:", "ionic:"].includes(window.location.protocol);
+const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+const isSafari = /^((?!chrome|android|crios|fxios|edgios).)*safari/i.test(window.navigator.userAgent);
 const studentClips = [
-  "./assets/student-highlight-1.mp4?v=20260909-2",
-  "./assets/student-highlight-2.mp4?v=20260909-2",
-  "./assets/student-highlight-3.mp4?v=20260909-2",
+  "./assets/student-highlight-1.mp4?v=20260909-3",
+  "./assets/student-highlight-2.mp4?v=20260909-3",
+  "./assets/student-highlight-3.mp4?v=20260909-3",
 ];
 let activeClip = 0;
 
@@ -333,7 +335,7 @@ const createInstallBanner = () => {
   banner.className = "app-install";
   banner.setAttribute("aria-live", "polite");
   banner.innerHTML = `
-    <img src="./assets/snowboard-avatar.svg?v=20260909-2" alt="" />
+    <img src="./assets/snowboard-avatar.svg?v=20260909-3" alt="" />
     <div>
       <strong></strong>
       <small></small>
@@ -375,9 +377,16 @@ function updateInstallBannerText() {
   const copy = banner.querySelector("small");
   const action = banner.querySelector(".install-action");
   const isZh = currentLang === "zh";
+  const needsManualIosInstall = isIos && !deferredInstallPrompt;
 
   if (title) {
-    title.textContent = isZh ? "安装 Hong Snow App" : "Install the Hong Snow app";
+    title.textContent = needsManualIosInstall
+      ? isZh
+        ? "添加到 iPhone 主屏幕"
+        : "Add to iPhone Home Screen"
+      : isZh
+        ? "安装 Hong Snow App"
+        : "Install the Hong Snow app";
   }
 
   if (copy) {
@@ -385,9 +394,17 @@ function updateInstallBannerText() {
       ? isZh
         ? "把课程、视频和预约入口放到手机桌面。"
         : "Keep booking, clips, and lesson notes on your home screen."
+      : needsManualIosInstall
+        ? isZh
+          ? isSafari
+            ? "点 Safari 底部分享按钮，再选“添加到主屏幕”。"
+            : "iPhone 需要用 Safari 打开本页，再点分享按钮，选择“添加到主屏幕”。"
+          : isSafari
+            ? "Tap Safari Share, then Add to Home Screen."
+            : "Open this page in Safari, tap Share, then Add to Home Screen."
       : isZh
-        ? "iPhone 可在 Safari 分享菜单中选择“添加到主屏幕”。"
-        : "On iPhone, use Safari Share, then Add to Home Screen.";
+        ? "如果没有弹出安装框，请用浏览器菜单选择“添加到主屏幕”。"
+        : "If no install prompt appears, use the browser menu and choose Add to Home screen.";
   }
 
   if (action) {
@@ -395,9 +412,13 @@ function updateInstallBannerText() {
   }
 }
 
-const showInstallBanner = () => {
-  if (isNativeApp || isStandalone || localStorage.getItem("snowboard-install-dismissed") === "true") {
+const showInstallBanner = ({ force = false } = {}) => {
+  if (isNativeApp || isStandalone || (!force && localStorage.getItem("snowboard-install-dismissed") === "true")) {
     return;
+  }
+
+  if (force) {
+    localStorage.removeItem("snowboard-install-dismissed");
   }
 
   const banner = createInstallBanner();
@@ -414,8 +435,7 @@ installButtons.forEach((button) => {
       document.querySelector(".app-install")?.classList.remove("show");
       return;
     }
-
-    showInstallBanner();
+    showInstallBanner({ force: true });
   });
 });
 
@@ -432,13 +452,12 @@ window.addEventListener("appinstalled", () => {
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260909-2").catch(() => {});
+    navigator.serviceWorker.register("./service-worker.js?v=20260909-3").catch(() => {});
   });
 }
 
 window.addEventListener("load", () => {
   const isSmallTouchScreen = window.matchMedia("(max-width: 760px)").matches;
-  const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
 
   if (isSmallTouchScreen && isIos) {
     window.setTimeout(showInstallBanner, 1400);

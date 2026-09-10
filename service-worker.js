@@ -1,20 +1,20 @@
-const CACHE_NAME = "honglin-snowboard-v12";
+const CACHE_NAME = "honglin-snowboard-v13";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./programs.html",
   "./student-clips.html",
   "./about.html",
-  "./styles.css?v=20260909-2",
-  "./google-sheets-config.js?v=20260909-2",
-  "./script.js?v=20260909-2",
+  "./styles.css?v=20260909-3",
+  "./google-sheets-config.js?v=20260909-3",
+  "./script.js?v=20260909-3",
   "./manifest.webmanifest",
-  "./assets/snowboard-avatar.svg?v=20260909-2",
+  "./assets/snowboard-avatar.svg?v=20260909-3",
   "./assets/app-icons/icon-192.png",
   "./assets/app-icons/icon-512.png",
   "./assets/app-icons/apple-touch-icon.png",
   "./assets/hero-snowboard-coach.png",
-  "./assets/aasi-certification-l1-hong-lin.jpg?v=20260909-2"
+  "./assets/aasi-certification-l1-hong-lin.jpg?v=20260909-3"
 ];
 
 self.addEventListener("install", (event) => {
