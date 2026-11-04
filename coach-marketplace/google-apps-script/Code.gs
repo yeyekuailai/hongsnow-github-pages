@@ -4,17 +4,43 @@
  */
 
 function configureRecipient() {
-  // Run this function once to store the authorized business inbox in Script Properties.
-  PropertiesService.getScriptProperties().setProperty('RECIPIENT_EMAIL', 'linhong326326@gmail.com');
+  // Run this function once to store the authorized business inbox and defaults.
+  var properties = PropertiesService.getScriptProperties();
+  properties.setProperties({
+    RECIPIENT_EMAIL: 'linhong326326@gmail.com',
+    APPLICATIONS_ENABLED: 'true',
+    QUOTA_ALERT_PERCENT: '50'
+  }, false);
+
+  var remaining = MailApp.getRemainingDailyQuota();
+  var baseline = Number(properties.getProperty('QUOTA_BASELINE') || 0);
+  if (remaining > baseline) properties.setProperty('QUOTA_BASELINE', String(remaining));
+}
+
+function pauseApplications() {
+  PropertiesService.getScriptProperties().setProperty('APPLICATIONS_ENABLED', 'false');
+}
+
+function resumeApplications() {
+  PropertiesService.getScriptProperties().setProperty('APPLICATIONS_ENABLED', 'true');
 }
 
 function doGet() {
-  return ContentService
-    .createTextOutput(JSON.stringify({ ok: true, service: 'SnowLink instructor applications' }))
-    .setMimeType(ContentService.MimeType.JSON);
+  var quota = getQuotaStatus();
+  return jsonOutput({
+    ok: true,
+    service: 'SnowLink instructor applications',
+    acceptingApplications: applicationsAreEnabled(),
+    quotaUsagePercent: quota.usagePercent,
+    quotaAlertPercent: quota.alertPercent
+  });
 }
 
 function doPost(e) {
+  if (!applicationsAreEnabled()) {
+    return jsonOutput({ ok: false, paused: true, message: 'Applications are temporarily paused.' });
+  }
+
   var recipient = PropertiesService.getScriptProperties().getProperty('RECIPIENT_EMAIL');
   if (!recipient) throw new Error('RECIPIENT_EMAIL is not configured.');
 
@@ -81,8 +107,54 @@ function doPost(e) {
     attachments: attachments
   });
 
+  checkAndAlertQuota(recipient);
+
+  return jsonOutput({ ok: true });
+}
+
+function applicationsAreEnabled() {
+  return PropertiesService.getScriptProperties().getProperty('APPLICATIONS_ENABLED') !== 'false';
+}
+
+function getQuotaStatus() {
+  var properties = PropertiesService.getScriptProperties();
+  var remaining = MailApp.getRemainingDailyQuota();
+  var baseline = Number(properties.getProperty('QUOTA_BASELINE') || 0);
+  if (!baseline || remaining > baseline) {
+    baseline = remaining;
+    properties.setProperty('QUOTA_BASELINE', String(baseline));
+  }
+  var usagePercent = baseline > 0 ? Math.round((1 - remaining / baseline) * 100) : 100;
+  return {
+    remaining: remaining,
+    baseline: baseline,
+    usagePercent: Math.max(0, Math.min(100, usagePercent)),
+    alertPercent: Number(properties.getProperty('QUOTA_ALERT_PERCENT') || 50)
+  };
+}
+
+function checkAndAlertQuota(recipient) {
+  var properties = PropertiesService.getScriptProperties();
+  var quota = getQuotaStatus();
+  if (quota.usagePercent < quota.alertPercent || quota.remaining < 1) return;
+
+  var timeZone = Session.getScriptTimeZone() || 'America/New_York';
+  var today = Utilities.formatDate(new Date(), timeZone, 'yyyy-MM-dd');
+  if (properties.getProperty('QUOTA_ALERT_DATE') === today) return;
+
+  properties.setProperty('QUOTA_ALERT_DATE', today);
+  MailApp.sendEmail({
+    to: recipient,
+    subject: '[雪语额度提醒] 今日邮件发送额度已使用 ' + quota.usagePercent + '%',
+    body: 'SnowLink 今日邮件发送额度已使用 ' + quota.usagePercent + '%。\n' +
+      '当前剩余额度：' + quota.remaining + '。\n' +
+      '如需暂停申请，请在 Apps Script 中运行 pauseApplications。'
+  });
+}
+
+function jsonOutput(payload) {
   return ContentService
-    .createTextOutput(JSON.stringify({ ok: true }))
+    .createTextOutput(JSON.stringify(payload))
     .setMimeType(ContentService.MimeType.JSON);
 }
 
