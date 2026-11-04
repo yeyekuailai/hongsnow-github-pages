@@ -31,4 +31,4 @@ python3 -m http.server 8000
 
 ## 说明
 
-这是非官方中文学习辅助，不替代最新的 National Standards、Performance Guides、Assessment Forms、Eastern 报名页面或考官当天指令。官方资料更新后，应逐项复核 `app.js` 中的级别、地形、活动参数和判定描述。
+这是非官方中文学习辅助，不替代最新的 National Standards、Performance Guides、Assessment Forms、Eastern 报名页面或考官当天指令。官方资料更新后，应逐项复核 `assets/js/app.js` 中的级别、地形、活动参数和判定描述。

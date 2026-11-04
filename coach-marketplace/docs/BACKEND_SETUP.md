@@ -6,7 +6,7 @@
 
 1. 登录负责接收申请的 Google 账号。
 2. 打开 [script.google.com](https://script.google.com) 并创建新项目。
-3. 将 `google-apps-script/Code.gs` 的内容复制到编辑器。
+3. 将 `../backend/google-apps-script/Code.gs` 的内容复制到编辑器。
 4. `configureRecipient()` 已配置为 `linhong326326@gmail.com`。
 5. 在 Apps Script 顶部选择 `configureRecipient`，点击“运行”，完成一次授权。
 
@@ -20,7 +20,7 @@
 
 ## 3. 连接网页
 
-打开 `config.js`，把 URL 填入：
+打开 `../config/form-endpoint.js`，把 URL 填入：
 
 ```js
 window.SNOWLINK_CONFIG = {

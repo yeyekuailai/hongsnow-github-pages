@@ -288,8 +288,8 @@ form.addEventListener("submit", async (event) => {
   if (!bookingEndpoint) {
     note.textContent =
       currentLang === "zh"
-        ? "Google Sheet 收集端点还没有配置。请先部署 google-apps-script.js，然后把 Web App URL 填进 google-sheets-config.js。"
-        : "The Google Sheet endpoint is not configured yet. Deploy google-apps-script.js, then paste the Web App URL into google-sheets-config.js.";
+        ? "Google Sheet 收集端点还没有配置。请先部署收件脚本，然后把 Web App URL 填进 config/google-sheets-config.js。"
+        : "The Google Sheet endpoint is not configured yet. Deploy the receiver script, then paste the Web App URL into config/google-sheets-config.js.";
     return;
   }
 
@@ -452,7 +452,7 @@ window.addEventListener("appinstalled", () => {
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20260909-3").catch(() => {});
+    navigator.serviceWorker.register("./service-worker.js?v=20261103-1").catch(() => {});
   });
 }
 

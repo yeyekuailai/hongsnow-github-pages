@@ -25,7 +25,16 @@ python3 -m http.server 4173
 
 然后访问 `http://localhost:4173`。
 
-教练申请页位于 `apply.html`。Gmail 收件配置见 `BACKEND_SETUP.md`。
+教练申请页位于 `apply.html`。Gmail 收件配置见 `docs/BACKEND_SETUP.md`，雪场数据说明见 `docs/DATA_SOURCES.md`。
+
+## 目录
+
+- `assets/css/`：首页与申请页样式
+- `assets/js/`：筛选、教练卡片和申请表逻辑
+- `data/`：雪场与通票数据
+- `config/`：公开表单端点配置
+- `backend/google-apps-script/`：Gmail 收件、暂停开关和额度提醒
+- `docs/`：后端部署与数据来源说明
 
 ## 产品边界
 

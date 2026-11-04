@@ -756,7 +756,7 @@ blockquote p,
   color: var(--snow);
   background:
     linear-gradient(150deg, rgba(16, 35, 50, 0.96), rgba(7, 16, 24, 0.9)),
-    url("./assets/hero-snowboard-coach.png") center / cover;
+    url("../hero-snowboard-coach.png") center / cover;
 }
 
 .credential-note span,
@@ -947,7 +947,7 @@ blockquote {
   color: var(--snow);
   background:
     linear-gradient(135deg, rgba(7, 16, 24, 0.94), rgba(16, 35, 50, 0.68)),
-    url("./assets/hero-snowboard-coach.png") center / cover;
+    url("../hero-snowboard-coach.png") center / cover;
   box-shadow: var(--shadow);
 }
 
@@ -1079,7 +1079,7 @@ cite {
   color: var(--snow);
   background:
     linear-gradient(135deg, rgba(113, 212, 197, 0.28), rgba(238, 111, 87, 0.2)),
-    url("./assets/hero-snowboard-coach.png") center / cover;
+    url("../hero-snowboard-coach.png") center / cover;
 }
 
 .student-player-placeholder::before {

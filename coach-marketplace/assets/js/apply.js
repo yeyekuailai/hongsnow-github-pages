@@ -17,14 +17,14 @@ const ui = {
     selectState: "请选择州", required: "请完成本页标有 * 的必填内容，再继续。", fileTooLarge: "在职证明文件不能超过 10MB，请压缩或更换文件。", fileReadError: "无法读取在职证明文件，请重新选择后再提交。",
     review: ["主页姓名", "雪场", "项目", "教学对象", "PSIA / AASI", "在职证明", "联系邮箱"],
     notProvided: "未填写", step: (number) => `第 ${number} 步，共 4 步`, separator: "、",
-    noCertification: "无", missingEndpoint: "收件邮箱尚未连接。请先在 config.js 中填写 Google Apps Script Web App URL。",
+    noCertification: "无", missingEndpoint: "收件邮箱尚未连接。请先在 config/form-endpoint.js 中填写 Google Apps Script Web App URL。",
     submitting: "正在提交…", submitError: "提交未完成。请检查网络后重试，或联系平台运营者。", submit: '提交审核 <span>↗</span>',
   },
   en: {
     selectState: "Select a state", required: "Complete every required field marked with * before continuing.", fileTooLarge: "The employment verification file must be 10MB or smaller.", fileReadError: "The employment verification file could not be read. Select it again and retry.",
     review: ["Profile name", "Resort", "Discipline", "Students", "PSIA / AASI", "Employment proof", "Contact email"],
     notProvided: "Not provided", step: (number) => `Step ${number} of 4`, separator: ", ",
-    noCertification: "None", missingEndpoint: "The application inbox is not connected yet. Add the Google Apps Script Web App URL in config.js.",
+    noCertification: "None", missingEndpoint: "The application inbox is not connected yet. Add the Google Apps Script Web App URL in config/form-endpoint.js.",
     submitting: "Submitting…", submitError: "Your application was not submitted. Check your connection and try again, or contact SnowLink.", submit: 'Submit for review <span>↗</span>',
   },
 }[locale];

@@ -1,13 +1,13 @@
-const CACHE_NAME = "honglin-snowboard-v13";
+const CACHE_NAME = "honglin-snowboard-v14";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./programs.html",
   "./student-clips.html",
   "./about.html",
-  "./styles.css?v=20260909-3",
-  "./google-sheets-config.js?v=20260909-3",
-  "./script.js?v=20260909-3",
+  "./assets/css/site.css?v=20261103-1",
+  "./config/google-sheets-config.js?v=20261103-1",
+  "./assets/js/site.js?v=20261103-1",
   "./manifest.webmanifest",
   "./assets/snowboard-avatar.svg?v=20260909-3",
   "./assets/app-icons/icon-192.png",
