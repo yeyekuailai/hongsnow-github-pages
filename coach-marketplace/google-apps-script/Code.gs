@@ -4,8 +4,8 @@
  */
 
 function configureRecipient() {
-  // Replace this placeholder locally, run once, then restore it before committing.
-  PropertiesService.getScriptProperties().setProperty('RECIPIENT_EMAIL', 'YOUR_EMAIL@example.com');
+  // Run this function once to store the authorized business inbox in Script Properties.
+  PropertiesService.getScriptProperties().setProperty('RECIPIENT_EMAIL', 'linhong326326@gmail.com');
 }
 
 function doGet() {
