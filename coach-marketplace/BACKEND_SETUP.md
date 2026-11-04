@@ -37,3 +37,9 @@ window.SNOWLINK_CONFIG = {
 ```
 
 确认正文和附件均收取成功后，再将申请入口公开。不要把 Gmail 密码或 Google App Password 写入项目文件。部署并运行 `configureRecipient()` 后，收件地址会保存在 Apps Script 的 Script Properties 中。
+
+## 暂停与恢复申请
+
+- 在 Apps Script 顶部选择 `pauseApplications` 并运行，可立即停止接收新申请。
+- 选择 `resumeApplications` 并运行，可恢复接收申请。
+- 达到每日邮件发送额度的 50% 后，系统每天最多向收件邮箱发送一次额度提醒。
