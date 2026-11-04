@@ -1,5 +1,3 @@
 window.SNOWLINK_CONFIG = {
-  // Paste the deployed Google Apps Script Web App URL here.
-  // Example: "https://script.google.com/macros/s/AKfycb.../exec"
-  formEndpoint: "",
+  formEndpoint: "https://script.google.com/macros/s/AKfycbwk3K_GjNtkV-k8q9BfPWmxoY4PNV3qGq3X8ajeYKegQ4FrgBP_01Su6z3aiznbWfJ-/exec",
 };
