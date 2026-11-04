@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Apply for a verified SnowLink instructor profile." />
+    <title>Instructor verification | SnowLink</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="apply.css" />
+  </head>
+  <body class="apply-page">
+    <header class="site-header">
+      <a class="brand" href="en.html" aria-label="SnowLink home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42"><path d="M7 31c8-1 8-14 17-19 4-2 8-1 11 1-8 3-9 11-13 17-3 5-8 7-15 1Z"/><path d="M12 31c6-2 8-8 12-13"/></svg></span><span><strong>雪语</strong><small>SnowLink</small></span></a>
+      <p class="apply-header-label">INSTRUCTOR PROFILE APPLICATION</p>
+      <div class="header-links"><a href="apply.html" lang="zh-CN" aria-label="切换到中文">中文</a><a class="back-home" href="en.html">Back home ×</a></div>
+    </header>
+
+    <main class="application-shell">
+      <aside class="application-rail">
+        <div><p class="eyebrow light"><span></span> Instructor profile</p><h1>Be found<br />before guests<br /><em>hit the snow.</em></h1><p class="rail-intro">Create a free profile for Chinese-speaking guests. Lessons remain booked, paid for, and fulfilled by your official ski school.</p></div>
+        <ol class="progress-list" aria-label="Application progress">
+          <li class="active" data-progress="1"><span>01</span><div><b>Identity &amp; ski school</b><small>Confirm where you currently teach</small></div></li>
+          <li data-progress="2"><span>02</span><div><b>Teaching focus</b><small>Help guests understand your fit</small></div></li>
+          <li data-progress="3"><span>03</span><div><b>Profile materials</b><small>Bio, photo, and riding video</small></div></li>
+          <li data-progress="4"><span>04</span><div><b>Review &amp; submit</b><small>Verify and authorize review</small></div></li>
+        </ol>
+        <div class="rail-note"><span>✓</span><p>Your information is used for SnowLink verification. Your profile will not be published without your confirmation.</p></div>
+      </aside>
+
+      <section class="application-content">
+        <div class="application-topline"><span id="step-label">Step 1 of 4</span><span>About 6–8 minutes</span></div>
+        <form id="instructor-application" novalidate>
+          <label class="hp-field" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+          <section class="form-step active" data-step="1" aria-labelledby="step-one-title">
+            <header class="form-heading"><p>First, verify where you are authorized to teach</p><h2 id="step-one-title">Identity &amp; official ski school</h2></header>
+            <div class="form-grid two">
+              <label class="field"><span>Legal name *</span><input name="legal_name" autocomplete="name" required placeholder="As shown in ski-school records" /></label>
+              <label class="field"><span>Profile display name *</span><input name="display_name" required placeholder="Example: 林嘉树 Jason" /></label>
+              <label class="field"><span>Contact email *</span><input name="email" type="email" autocomplete="email" required placeholder="name@example.com" /></label>
+              <label class="field"><span>Phone *</span><input name="phone" type="tel" autocomplete="tel" required placeholder="+1 000 000 0000" /></label>
+              <label class="field"><span>Pass network *</span><select name="pass" id="apply-pass" required><option value="">Select a pass</option><option value="epic">Epic Pass</option><option value="ikon">Ikon Pass</option></select></label>
+              <label class="field"><span>State *</span><select name="state" id="apply-state" required><option value="">Select a state</option></select></label>
+              <label class="field full"><span>Current resort *</span><select name="resort" id="apply-resort" required><option value="">Select your resort</option></select></label>
+              <label class="field full"><span>Official ski-school name *</span><input name="ski_school" required placeholder="Name of the official Ski &amp; Snowboard School that employs you" /></label>
+              <label class="field full file-field"><span>Upload employment verification *</span><input name="employment_proof_file" id="employment-proof-file" type="file" accept="image/*,.pdf,application/pdf" required /><small>Upload a recent resort paycheck/pay stub, resort employee ID, or employment letter. Image or PDF, up to 10MB. Cover your SSN, bank account, home address, and any unnecessary compensation details.</small></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="2" aria-labelledby="step-two-title">
+            <header class="form-heading"><p>Tell guests what you teach best</p><h2 id="step-two-title">Teaching focus</h2></header>
+            <fieldset class="choice-group" data-required-group="discipline"><legend>Discipline *</legend><label><input type="checkbox" name="discipline" value="Ski" /><span>Ski</span></label><label><input type="checkbox" name="discipline" value="Snowboard" /><span>Snowboard</span></label></fieldset>
+            <fieldset class="choice-group" data-required-group="students"><legend>Primary students *</legend><label><input type="checkbox" name="students" value="Adults" /><span>Adults</span></label><label><input type="checkbox" name="students" value="Children" /><span>Children</span></label><label><input type="checkbox" name="students" value="Families" /><span>Families</span></label></fieldset>
+            <fieldset class="choice-group" data-required-group="levels"><legend>Student levels *</legend><label><input type="checkbox" name="levels" value="First-time" /><span>First-time</span></label><label><input type="checkbox" name="levels" value="Beginner" /><span>Beginner</span></label><label><input type="checkbox" name="levels" value="Intermediate" /><span>Intermediate</span></label><label><input type="checkbox" name="levels" value="Advanced" /><span>Advanced</span></label></fieldset>
+            <div class="form-grid two compact-grid">
+              <label class="field"><span>PSIA certification (optional)</span><select name="psia"><option value="None">None</option><option>Alpine Level I</option><option>Alpine Level II</option><option>Alpine Level III</option></select></label>
+              <label class="field"><span>AASI certification (optional)</span><select name="aasi"><option value="None">None</option><option>Snowboard Level I</option><option>Snowboard Level II</option><option>Snowboard Level III</option></select></label>
+              <label class="field full"><span>Other certifications (optional)</span><input name="other_certifications" placeholder="Example: Children's Specialist 1" /></label>
+              <label class="field full"><span>Official lesson booking URL *</span><input name="official_booking_url" type="url" required placeholder="https://resort-website.com/lessons" /></label>
+              <label class="field full"><span>How guests request you</span><textarea name="request_method" rows="3" placeholder="Example: After booking a private lesson, call the ski school with my name. Final assignment is subject to availability."></textarea></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="3" aria-labelledby="step-three-title">
+            <header class="form-heading"><p>Help first-time guests understand who you are</p><h2 id="step-three-title">Profile materials</h2></header>
+            <div class="form-grid two">
+              <label class="field full"><span>One-line introduction *</span><input name="tagline" maxlength="90" required placeholder="Example: I make complex movements clear in three simple steps" /><small><b id="tagline-count">0</b>/90</small></label>
+              <label class="field full"><span>About you *</span><textarea name="bio" rows="7" maxlength="800" required placeholder="Share your teaching style, ideal students, and why you enjoy teaching snow sports."></textarea><small><b id="bio-count">0</b>/800</small></label>
+              <label class="field full"><span>Portrait or teaching photo link *</span><input name="photo_url" type="url" required placeholder="View-enabled Google Drive or Dropbox link" /></label>
+              <label class="field full"><span>Riding or teaching video link *</span><input name="video_url" type="url" required placeholder="YouTube, Vimeo, or Google Drive link" /></label>
+              <label class="field"><span>Instagram (optional)</span><input name="instagram_url" type="url" placeholder="https://instagram.com/..." /></label>
+              <label class="field"><span>Xiaohongshu (optional)</span><input name="xiaohongshu_url" type="url" placeholder="Public profile link" /></label>
+            </div>
+            <div class="material-tip"><span>MATERIAL TIPS</span><p>Choose a photo that clearly shows your face, ideally while teaching or in ski-school uniform. A 30–90 second video showing control and demonstrations works best.</p></div>
+          </section>
+
+          <section class="form-step" data-step="4" aria-labelledby="step-four-title">
+            <header class="form-heading"><p>One last check</p><h2 id="step-four-title">Ready for review</h2></header>
+            <div class="review-card" id="review-card"></div>
+            <div class="consents">
+              <label><input type="checkbox" name="chinese_instruction_consent" required /><span>I can teach an entire official ski or snowboard lesson in Chinese. *</span></label>
+              <label><input type="checkbox" name="truth_consent" required /><span>I confirm that this information is accurate and that I am currently employed by the selected resort's official ski school. *</span></label>
+              <label><input type="checkbox" name="authorization_consent" required /><span>I authorize SnowLink to contact the ski school for verification and to display the profile information I approve. *</span></label>
+              <label><input type="checkbox" name="conduct_consent" required /><span>I will not use SnowLink to solicit paid private lessons that are not authorized by the resort. *</span></label>
+            </div>
+            <div class="submission-note"><strong>What happens after submission?</strong><p>Your application is sent to SnowLink's operations inbox. After we verify your current ski-school status, we will contact you by email to confirm your profile.</p></div>
+          </section>
+
+          <div class="form-error" id="form-error" role="alert" hidden></div>
+          <div class="form-actions"><button type="button" class="secondary-action" id="previous-step" hidden>Previous</button><button type="button" class="primary-action" id="next-step">Continue <span>↘</span></button><button type="submit" class="primary-action" id="submit-application" hidden>Submit for review <span>↗</span></button></div>
+        </form>
+      </section>
+    </main>
+
+    <div class="success-screen" id="success-screen" hidden><div><span>✓</span><p>APPLICATION RECEIVED</p><h2>We've received your materials.</h2><p>We will verify your current ski-school status, then contact you by email to confirm your profile.</p><a href="en.html">Back home</a></div></div>
+
+    <script>window.SNOWLINK_LOCALE = "en";</script>
+    <script src="resorts.js"></script>
+    <script src="config.js"></script>
+    <script src="apply.js"></script>
+  </body>
+</html>

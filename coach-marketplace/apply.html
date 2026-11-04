@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="申请加入雪语全美中文滑雪教练目录。" />
+    <title>申请教练主页｜雪语 SnowLink</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="apply.css" />
+  </head>
+  <body class="apply-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="返回雪语首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 42"><path d="M7 31c8-1 8-14 17-19 4-2 8-1 11 1-8 3-9 11-13 17-3 5-8 7-15 1Z"/><path d="M12 31c6-2 8-8 12-13"/></svg>
+        </span>
+        <span><strong>雪语</strong><small>SnowLink</small></span>
+      </a>
+      <p class="apply-header-label">教练主页申请</p>
+      <div class="header-links"><a href="apply-en.html" lang="en" aria-label="Switch to English">EN</a><a class="back-home" href="index.html">返回首页 ×</a></div>
+    </header>
+
+    <main class="application-shell">
+      <aside class="application-rail">
+        <div>
+          <p class="eyebrow light"><span></span> Instructor profile</p>
+          <h1>让中文学员<br />在出发前<br /><em>找到你。</em></h1>
+          <p class="rail-intro">免费建立主页。课程仍由你所在的官方雪校预约、收费和安排。</p>
+        </div>
+        <ol class="progress-list" aria-label="申请进度">
+          <li class="active" data-progress="1"><span>01</span><div><b>身份与雪校</b><small>确认当前在职与授课地点</small></div></li>
+          <li data-progress="2"><span>02</span><div><b>教学方向</b><small>帮助学员判断是否合适</small></div></li>
+          <li data-progress="3"><span>03</span><div><b>主页素材</b><small>介绍、照片与滑行视频</small></div></li>
+          <li data-progress="4"><span>04</span><div><b>确认提交</b><small>核对资料并授权审核</small></div></li>
+        </ol>
+        <div class="rail-note"><span>✓</span><p>资料只用于雪语审核。未经你确认，主页不会公开发布。</p></div>
+      </aside>
+
+      <section class="application-content">
+        <div class="application-topline">
+          <span id="step-label">第 1 步，共 4 步</span>
+          <span>预计 6–8 分钟</span>
+        </div>
+
+        <form id="instructor-application" novalidate>
+          <label class="hp-field" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+          <section class="form-step active" data-step="1" aria-labelledby="step-one-title">
+            <header class="form-heading">
+              <p>先确认你在哪里合法教学</p>
+              <h2 id="step-one-title">身份与官方雪校</h2>
+            </header>
+            <div class="form-grid two">
+              <label class="field"><span>法律姓名 *</span><input name="legal_name" autocomplete="name" required placeholder="与雪校记录一致" /></label>
+              <label class="field"><span>主页显示姓名 *</span><input name="display_name" required placeholder="例如：林嘉树 Jason" /></label>
+              <label class="field"><span>联系邮箱 *</span><input name="email" type="email" autocomplete="email" required placeholder="name@example.com" /></label>
+              <label class="field"><span>联系电话 *</span><input name="phone" type="tel" autocomplete="tel" required placeholder="+1 000 000 0000" /></label>
+              <label class="field"><span>通票体系 *</span><select name="pass" id="apply-pass" required><option value="">请选择</option><option value="epic">Epic Pass</option><option value="ikon">Ikon Pass</option></select></label>
+              <label class="field"><span>州 *</span><select name="state" id="apply-state" required><option value="">请选择州</option></select></label>
+              <label class="field full"><span>当前所属雪场 *</span><select name="resort" id="apply-resort" required><option value="">请选择所属雪场</option></select></label>
+              <label class="field full"><span>官方雪校名称 *</span><input name="ski_school" required placeholder="填写雇佣你的官方 Ski &amp; Snowboard School" /></label>
+              <label class="field full file-field"><span>上传在职证明 *</span><input name="employment_proof_file" id="employment-proof-file" type="file" accept="image/*,.pdf,application/pdf" required /><small>可上传近期雪场工资支票/工资单、雪场工作证或在职证明。支持图片或 PDF，单个文件不超过 10MB；请遮盖 SSN、银行账号、住址和非必要薪资信息。</small></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="2" aria-labelledby="step-two-title">
+            <header class="form-heading"><p>告诉学员你最适合教什么</p><h2 id="step-two-title">教学方向</h2></header>
+            <fieldset class="choice-group" data-required-group="discipline">
+              <legend>授课项目 *</legend>
+              <label><input type="checkbox" name="discipline" value="双板 Ski" /><span>双板 Ski</span></label>
+              <label><input type="checkbox" name="discipline" value="单板 Snowboard" /><span>单板 Snowboard</span></label>
+            </fieldset>
+            <fieldset class="choice-group" data-required-group="students">
+              <legend>主要教学对象 *</legend>
+              <label><input type="checkbox" name="students" value="成人" /><span>成人</span></label>
+              <label><input type="checkbox" name="students" value="儿童" /><span>儿童</span></label>
+              <label><input type="checkbox" name="students" value="亲子家庭" /><span>亲子家庭</span></label>
+            </fieldset>
+            <fieldset class="choice-group" data-required-group="levels">
+              <legend>适合的学员水平 *</legend>
+              <label><input type="checkbox" name="levels" value="第一次滑雪" /><span>第一次滑雪</span></label>
+              <label><input type="checkbox" name="levels" value="新手" /><span>新手</span></label>
+              <label><input type="checkbox" name="levels" value="中级" /><span>中级</span></label>
+              <label><input type="checkbox" name="levels" value="高级" /><span>高级</span></label>
+            </fieldset>
+            <div class="form-grid two compact-grid">
+              <label class="field"><span>PSIA 认证（可选）</span><select name="psia"><option value="无">无</option><option>Alpine Level I</option><option>Alpine Level II</option><option>Alpine Level III</option></select></label>
+              <label class="field"><span>AASI 认证（可选）</span><select name="aasi"><option value="无">无</option><option>Snowboard Level I</option><option>Snowboard Level II</option><option>Snowboard Level III</option></select></label>
+              <label class="field full"><span>其他认证（可选）</span><input name="other_certifications" placeholder="例如：Children’s Specialist 1" /></label>
+              <label class="field full"><span>官方课程预约链接 *</span><input name="official_booking_url" type="url" required placeholder="https://雪场官网/lessons" /></label>
+              <label class="field full"><span>雪校指定教练方式</span><textarea name="request_method" rows="3" placeholder="例如：完成私教预约后，致电雪校并提供教练姓名；最终安排取决于档期。"></textarea></label>
+            </div>
+          </section>
+
+          <section class="form-step" data-step="3" aria-labelledby="step-three-title">
+            <header class="form-heading"><p>让第一次见你的学员快速了解你</p><h2 id="step-three-title">个人主页素材</h2></header>
+            <div class="form-grid two">
+              <label class="field full"><span>一句话介绍 *</span><input name="tagline" maxlength="90" required placeholder="例如：把复杂动作拆成中文里容易理解的三步" /><small><b id="tagline-count">0</b>/90</small></label>
+              <label class="field full"><span>个人介绍 *</span><textarea name="bio" rows="7" maxlength="800" required placeholder="介绍你的教学风格、适合的学员，以及为什么喜欢教滑雪。"></textarea><small><b id="bio-count">0</b>/800</small></label>
+              <label class="field full"><span>头像或教学照片链接 *</span><input name="photo_url" type="url" required placeholder="已开放查看权限的 Google Drive / Dropbox 链接" /></label>
+              <label class="field full"><span>滑行或教学视频链接 *</span><input name="video_url" type="url" required placeholder="YouTube / Vimeo / Google Drive 链接" /></label>
+              <label class="field"><span>Instagram（可选）</span><input name="instagram_url" type="url" placeholder="https://instagram.com/..." /></label>
+              <label class="field"><span>小红书主页（可选）</span><input name="xiaohongshu_url" type="url" placeholder="主页分享链接" /></label>
+            </div>
+            <div class="material-tip"><span>素材建议</span><p>选择能看清面部、穿着雪校制服或在雪场教学的照片；视频以 30–90 秒、能体现控速和示范能力为宜。</p></div>
+          </section>
+
+          <section class="form-step" data-step="4" aria-labelledby="step-four-title">
+            <header class="form-heading"><p>最后确认一次</p><h2 id="step-four-title">准备提交审核</h2></header>
+            <div class="review-card" id="review-card"></div>
+            <div class="consents">
+              <label><input type="checkbox" name="chinese_instruction_consent" required /><span>我能够使用中文完成整节官方滑雪课程。*</span></label>
+              <label><input type="checkbox" name="truth_consent" required /><span>我确认所填资料真实，并且目前受雇于所选雪场的官方雪校。*</span></label>
+              <label><input type="checkbox" name="authorization_consent" required /><span>我允许雪语为身份审核联系雪校，并在审核通过后展示我授权的个人资料。*</span></label>
+              <label><input type="checkbox" name="conduct_consent" required /><span>我不会通过雪语招揽未经雪场授权的私人收费课程。*</span></label>
+            </div>
+            <div class="submission-note"><strong>提交后会发生什么？</strong><p>申请将发送到平台运营邮箱。我们核验雪校在职状态后，通过你填写的邮箱联系你确认主页。</p></div>
+          </section>
+
+          <div class="form-error" id="form-error" role="alert" hidden></div>
+          <div class="form-actions">
+            <button type="button" class="secondary-action" id="previous-step" hidden>上一步</button>
+            <button type="button" class="primary-action" id="next-step">继续填写 <span>↘</span></button>
+            <button type="submit" class="primary-action" id="submit-application" hidden>提交审核 <span>↗</span></button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div class="success-screen" id="success-screen" hidden>
+      <div><span>✓</span><p>APPLICATION RECEIVED</p><h2>资料已收到。</h2><p>我们会先核验雪校在职状态，再通过申请邮箱联系你确认主页。</p><a href="index.html">返回首页</a></div>
+    </div>
+
+    <script src="resorts.js"></script>
+    <script src="config.js"></script>
+    <script src="apply.js"></script>
+  </body>
+</html>

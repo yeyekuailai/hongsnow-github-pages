@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="雪语帮助中文滑雪者发现美国官方雪校的中文教练。" />
+    <title>雪语 SnowLink｜全美中文滑雪教练导航</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="雪语首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 42"><path d="M7 31c8-1 8-14 17-19 4-2 8-1 11 1-8 3-9 11-13 17-3 5-8 7-15 1Z"/><path d="M12 31c6-2 8-8 12-13"/></svg>
+        </span>
+        <span><strong>雪语</strong><small>SnowLink</small></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#discover">找中文教练</a>
+        <a href="apply.html">申请教练验证</a>
+      </nav>
+      <a class="header-action" href="en.html" lang="en" aria-label="Switch to English">EN</a>
+    </header>
+
+    <main id="top">
+      <section class="find-hero" aria-labelledby="hero-title">
+        <div class="find-hero-copy">
+          <p class="eyebrow"><span></span> 官方雪校 · 中文教练 · 正规预约</p>
+          <h1 id="hero-title">官方雪校。<br /><em>中文教练。</em><br />正规预约。</h1>
+        </div>
+        <div class="find-hero-side">
+          <p>只收录经验证的美国官方雪校在职教练。课程通过雪场官网正规预约，平台不销售场外私教。</p>
+          <a href="#discover">开始找教练 <span>↓</span></a>
+          <div class="pass-key" aria-label="通票颜色说明">
+            <span><i class="epic"></i>Epic Pass</span>
+            <span><i class="ikon"></i>Ikon Pass</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="discover" id="discover" aria-labelledby="discover-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> Verified instructors</p>
+            <h2 id="discover-title">找到你的中文教练</h2>
+          </div>
+          <p>按通票、州、雪场和教学方向筛选。排名来自官方课程记录、真实评价与近期活跃度。</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="筛选教练">
+          <label><span>通票</span><select id="filter-pass"><option value="all">Epic + Ikon</option><option value="epic">Epic Pass</option><option value="ikon">Ikon Pass</option></select></label>
+          <label><span>州</span><select id="filter-state"><option value="all">全部州</option></select></label>
+          <label><span>雪场</span><select id="filter-resort"><option value="all">全部雪场</option></select></label>
+          <label><span>项目</span><select id="filter-discipline"><option value="all">单双板</option><option value="ski">双板</option><option value="snowboard">单板</option></select></label>
+          <label><span>学员</span><select id="filter-student"><option value="all">不限</option><option value="adult">成人</option><option value="child">儿童</option></select></label>
+          <button class="reset-button" id="reset-filters">清除</button>
+        </div>
+
+        <div class="results-meta"><p>显示 <strong id="result-count">4</strong> 位已验证教练</p><span>所有教练默认提供中文教学</span></div>
+
+        <div class="coach-grid" id="coach-grid">
+          <article class="coach-card" data-resort="palisades" data-pass="ikon" data-state="CA" data-discipline="snowboard" data-student="adult child">
+            <div class="coach-visual portrait-one"><div class="mountain-shape"></div><span class="rank">IKON · 单板推荐 01</span><span class="verified-badge">✓ 雪校在职已验证</span><div class="portrait-person avatar-male person-one" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>林嘉树 Jason</h3><p>Palisades Tahoe · Snowboard</p></div><strong>4.9<small>/5</small></strong></div><div class="tags"><span>AASI Level II</span><span>成人新手</span><span>第一次滑雪</span></div><blockquote>“第一次站上单板也不用紧张，我会用你听得懂的方式把动作拆开。”</blockquote><div class="coach-stats"><span><b>42</b> 已验证课程</span><span><b>11</b> 位学员复购</span></div><button class="profile-button" data-coach="jason">查看教练与预约方式 <span>↗</span></button></div>
+          </article>
+
+          <article class="coach-card" data-resort="vail" data-pass="epic" data-state="CO" data-discipline="ski" data-student="adult child">
+            <div class="coach-visual portrait-two"><div class="mountain-shape"></div><span class="rank">EPIC · 双板推荐</span><span class="verified-badge">✓ 雪校在职已验证</span><div class="portrait-person avatar-female person-two" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>陈俐 Michelle</h3><p>Vail Mountain · Alpine Ski</p></div><strong>5.0<small>/5</small></strong></div><div class="tags"><span>PSIA Level II</span><span>亲子教学</span><span>儿童友好</span></div><blockquote>“带孩子学滑雪，安全感和兴趣永远比动作标准更先一步。”</blockquote><div class="coach-stats"><span><b>58</b> 已验证课程</span><span><b>17</b> 位学员复购</span></div><button class="profile-button" data-coach="michelle">查看教练与预约方式 <span>↗</span></button></div>
+          </article>
+
+          <article class="coach-card" data-resort="mammoth" data-pass="ikon" data-state="CA" data-discipline="ski" data-student="adult">
+            <div class="coach-visual portrait-three"><div class="mountain-shape"></div><span class="rank">IKON · 近期活跃</span><span class="verified-badge">✓ 雪校在职已验证</span><div class="portrait-person avatar-male person-three" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>周舟 Joe</h3><p>Mammoth Mountain · Alpine Ski</p></div><strong>4.8<small>/5</small></strong></div><div class="tags"><span>PSIA Level I</span><span>成人入门</span><span>控速转弯</span></div><blockquote>“从穿雪鞋到第一次完整刹停，每个小进步都值得被看见。”</blockquote><div class="coach-stats"><span><b>31</b> 已验证课程</span><span><b>8</b> 位学员复购</span></div><button class="profile-button" data-coach="joe">查看教练与预约方式 <span>↗</span></button></div>
+          </article>
+
+          <article class="coach-card" data-resort="breckenridge" data-pass="epic" data-state="CO" data-discipline="snowboard" data-student="child">
+            <div class="coach-visual portrait-four"><div class="mountain-shape"></div><span class="rank">EPIC · 儿童单板</span><span class="verified-badge">✓ 雪校在职已验证</span><div class="portrait-person avatar-female person-four" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>许安 An</h3><p>Breckenridge · Snowboard</p></div><strong>4.9<small>/5</small></strong></div><div class="tags"><span>AASI Level I</span><span>儿童教学</span><span>游戏化教学</span></div><blockquote>“把雪场变成游乐场，小朋友自然会愿意多试一次。”</blockquote><div class="coach-stats"><span><b>27</b> 已验证课程</span><span><b>9</b> 位学员复购</span></div><button class="profile-button" data-coach="an">查看教练与预约方式 <span>↗</span></button></div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden><strong>这个地区还没有已验证教练</strong><p>我们正在邀请该雪场的中文教练加入。</p><button id="empty-reset">查看全部教练</button></div>
+      </section>
+
+      <section class="national-map-section" id="resort-map" aria-labelledby="map-title">
+        <div class="map-section-head">
+          <div><p class="eyebrow light"><span></span> U.S. resort coverage</p><h2 id="map-title">全美雪场分布</h2></div>
+          <div class="map-totals"><span><i class="epic"></i><b>37</b> Epic</span><span><i class="ikon"></i><b>41</b> Ikon</span><span><b>78</b> 美国目的地</span></div>
+        </div>
+        <div class="us-map-layout">
+          <div class="us-map" id="us-map" aria-label="Epic 和 Ikon 美国雪场州级分布图">
+            <svg viewBox="0 0 1000 590" role="img" aria-label="美国本土地图轮廓">
+              <path class="us-shape" d="M71 126 118 95l76 17 54-18 63 28 97-13 67 26 67-9 66 22 64-10 48 31 86 7 31 35 58 21 34 39-22 34-48 9-32 46-55 10-25 44-74 3-55 27-73-17-62 22-58-17-70 18-66-25-62 12-46-25-64-2-40-39-43-17-17-47-47-28 9-48-37-31 19-48-21-48 27-47-17-43 43-38Z"/>
+              <path class="great-lakes" d="M684 190c22-25 51-20 63-5-21 5-36 16-51 31-11-4-16-13-12-26Zm65 22c25-18 47-9 60 4-18 4-34 14-50 28-10-7-13-19-10-32Z"/>
+            </svg>
+            <div id="map-points"></div>
+            <div class="alaska-inset"><span>AK</span><i></i></div>
+            <div class="map-tooltip" id="map-tooltip" hidden></div>
+          </div>
+          <aside class="map-inspector" id="map-inspector">
+            <p>点击地图上的州</p>
+            <h3>从通票看雪场</h3>
+            <p>圆点越大，代表该州收录的目的地越多。双色圆点表示 Epic 与 Ikon 在同一州均有雪场。</p>
+            <div class="inspector-key"><span><i class="epic"></i>Epic Pass</span><span><i class="ikon"></i>Ikon Pass</span></div>
+          </aside>
+        </div>
+        <p class="map-source">按 Epic 与 Ikon 当前美国“目的地”口径统计；部分目的地包含多个山体。点击州可筛选教练。</p>
+      </section>
+
+      <section class="instructor-callout" id="for-instructors">
+        <div><p class="eyebrow light"><span></span> Instructor verification</p><h2>你在官方雪校教中文？<br />申请一个经过验证的主页。</h2></div>
+        <div>
+          <ul><li>免费建立个人主页</li><li>展示雪校、认证与教学方向</li><li>引导学员回到雪场官网订课</li></ul>
+          <a class="apply-link" href="apply.html">申请教练验证 <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><strong>雪语 SnowLink</strong><p>全美中文滑雪教练导航</p></div>
+      <p class="disclaimer">本平台不是滑雪学校，不销售或提供课程。课程预约、价格、付款、取消及教学服务由对应雪场官方雪校负责。除非另有明确说明，本平台与所列雪场、Epic、Ikon 及 PSIA-AASI 不存在隶属或官方合作关系。</p>
+    </footer>
+
+    <div class="modal-backdrop" id="coach-modal" hidden>
+      <section class="modal coach-modal" role="dialog" aria-modal="true" aria-labelledby="modal-coach-name">
+        <button class="modal-close" aria-label="关闭">×</button>
+        <div class="modal-header"><span class="verified-badge dark">✓ 雪校在职已验证</span><p id="modal-resort">Palisades Tahoe · 官方雪校</p><h2 id="modal-coach-name">林嘉树 Jason</h2><div class="tags" id="modal-tags"></div></div>
+        <div class="modal-body">
+          <div class="booking-status"><span>指定教练政策</span><strong id="modal-policy"></strong></div><h3 id="modal-how-title"></h3>
+          <ol><li id="modal-step-one"></li><li id="modal-step-two"></li><li>雪校将根据教练档期确认最终安排。</li></ol>
+          <div class="request-template"><span>英文请求模板</span><p id="request-copy"></p><button id="copy-request">复制模板</button></div>
+          <a class="official-link" id="modal-official-link" href="#" target="_blank" rel="noopener noreferrer">前往雪场官网订课 <span>↗</span></a><small>你将离开雪语，价格与最终安排以雪场官网为准。</small>
+        </div>
+      </section>
+    </div>
+
+    <script src="resorts.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

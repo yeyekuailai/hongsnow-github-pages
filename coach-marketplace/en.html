@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find verified Chinese-speaking instructors at official ski schools across the United States." />
+    <title>SnowLink | Verified Chinese-speaking ski instructors</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="SnowLink home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42"><path d="M7 31c8-1 8-14 17-19 4-2 8-1 11 1-8 3-9 11-13 17-3 5-8 7-15 1Z"/><path d="M12 31c6-2 8-8 12-13"/></svg></span><span><strong>雪语</strong><small>SnowLink</small></span></a>
+      <nav aria-label="Main navigation"><a href="#discover">Find an instructor</a><a href="apply-en.html">Instructor verification</a></nav>
+      <a class="header-action" href="index.html" lang="zh-CN" aria-label="切换到中文">中文</a>
+    </header>
+
+    <main id="top">
+      <section class="find-hero" aria-labelledby="hero-title">
+        <div class="find-hero-copy"><p class="eyebrow"><span></span> Official ski schools · Chinese instruction · Direct booking</p><h1 id="hero-title">Official ski schools.<br /><em>Chinese instruction.</em><br />Resort-direct booking.</h1></div>
+        <div class="find-hero-side"><p>We list instructors whose current official ski-school affiliation has been verified. Lessons are booked directly through the resort—SnowLink does not sell off-the-books private instruction.</p><a href="#discover">Find an instructor <span>↓</span></a><div class="pass-key" aria-label="Pass color key"><span><i class="epic"></i>Epic Pass</span><span><i class="ikon"></i>Ikon Pass</span></div></div>
+      </section>
+
+      <section class="discover" id="discover" aria-labelledby="discover-title">
+        <div class="section-heading"><div><p class="eyebrow"><span></span> Verified instructors</p><h2 id="discover-title">Find your Chinese-speaking instructor</h2></div><p>Filter by pass, state, resort, and teaching focus. Ranking reflects verified lessons, genuine reviews, and recent activity.</p></div>
+        <div class="filters" role="group" aria-label="Filter instructors">
+          <label><span>PASS</span><select id="filter-pass"><option value="all">Epic + Ikon</option><option value="epic">Epic Pass</option><option value="ikon">Ikon Pass</option></select></label>
+          <label><span>STATE</span><select id="filter-state"><option value="all">All states</option></select></label>
+          <label><span>RESORT</span><select id="filter-resort"><option value="all">All U.S. resorts</option></select></label>
+          <label><span>DISCIPLINE</span><select id="filter-discipline"><option value="all">Ski &amp; snowboard</option><option value="ski">Ski</option><option value="snowboard">Snowboard</option></select></label>
+          <label><span>STUDENT</span><select id="filter-student"><option value="all">Any</option><option value="adult">Adult</option><option value="child">Child</option></select></label>
+          <button class="reset-button" id="reset-filters">Reset</button>
+        </div>
+        <div class="results-meta"><p>Showing <strong id="result-count">4</strong> verified instructors</p><span>Every instructor listed teaches in Chinese</span></div>
+        <div class="coach-grid" id="coach-grid">
+          <article class="coach-card" data-resort="palisades" data-pass="ikon" data-state="CA" data-discipline="snowboard" data-student="adult child">
+            <div class="coach-visual portrait-one"><div class="mountain-shape"></div><span class="rank">IKON · SNOWBOARD 01</span><span class="verified-badge">✓ Official ski school verified</span><div class="portrait-person avatar-male person-one" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>林嘉树 Jason</h3><p>Palisades Tahoe · Snowboard</p></div><strong>4.9<small>/5</small></strong></div><div class="tags"><span>AASI Level II</span><span>Adult beginners</span><span>First-time riders</span></div><blockquote>“Your first day on a snowboard should feel clear, calm, and achievable—in the language you know best.”</blockquote><div class="coach-stats"><span><b>42</b> verified lessons</span><span><b>11</b> returning students</span></div><button class="profile-button" data-coach="jason">View profile &amp; booking steps <span>↗</span></button></div>
+          </article>
+          <article class="coach-card" data-resort="vail" data-pass="epic" data-state="CO" data-discipline="ski" data-student="adult child">
+            <div class="coach-visual portrait-two"><div class="mountain-shape"></div><span class="rank">EPIC · ALPINE SKI</span><span class="verified-badge">✓ Official ski school verified</span><div class="portrait-person avatar-female person-two" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>陈俐 Michelle</h3><p>Vail Mountain · Alpine Ski</p></div><strong>5.0<small>/5</small></strong></div><div class="tags"><span>PSIA Level II</span><span>Family lessons</span><span>Child-friendly</span></div><blockquote>“With children, confidence and curiosity come before perfect technique.”</blockquote><div class="coach-stats"><span><b>58</b> verified lessons</span><span><b>17</b> returning students</span></div><button class="profile-button" data-coach="michelle">View profile &amp; booking steps <span>↗</span></button></div>
+          </article>
+          <article class="coach-card" data-resort="mammoth" data-pass="ikon" data-state="CA" data-discipline="ski" data-student="adult">
+            <div class="coach-visual portrait-three"><div class="mountain-shape"></div><span class="rank">IKON · RECENTLY ACTIVE</span><span class="verified-badge">✓ Official ski school verified</span><div class="portrait-person avatar-male person-three" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>周舟 Joe</h3><p>Mammoth Mountain · Alpine Ski</p></div><strong>4.8<small>/5</small></strong></div><div class="tags"><span>PSIA Level I</span><span>Adult beginners</span><span>Speed control &amp; turns</span></div><blockquote>“From putting on your boots to your first controlled stop, every small win matters.”</blockquote><div class="coach-stats"><span><b>31</b> verified lessons</span><span><b>8</b> returning students</span></div><button class="profile-button" data-coach="joe">View profile &amp; booking steps <span>↗</span></button></div>
+          </article>
+          <article class="coach-card" data-resort="breckenridge" data-pass="epic" data-state="CO" data-discipline="snowboard" data-student="child">
+            <div class="coach-visual portrait-four"><div class="mountain-shape"></div><span class="rank">EPIC · KIDS SNOWBOARD</span><span class="verified-badge">✓ Official ski school verified</span><div class="portrait-person avatar-female person-four" aria-hidden="true"><span class="avatar-hair"></span><i class="avatar-expression"></i><b class="avatar-scarf"></b></div></div>
+            <div class="coach-info"><div class="coach-title"><div><h3>许安 An</h3><p>Breckenridge · Snowboard</p></div><strong>4.9<small>/5</small></strong></div><div class="tags"><span>AASI Level I</span><span>Children</span><span>Play-based lessons</span></div><blockquote>“Turn the mountain into a playground, and children naturally want to try one more time.”</blockquote><div class="coach-stats"><span><b>27</b> verified lessons</span><span><b>9</b> returning students</span></div><button class="profile-button" data-coach="an">View profile &amp; booking steps <span>↗</span></button></div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden><strong>No verified instructors here yet</strong><p>We are inviting Chinese-speaking instructors from this resort to join.</p><button id="empty-reset">View all instructors</button></div>
+      </section>
+
+      <section class="national-map-section" id="resort-map" aria-labelledby="map-title">
+        <div class="map-section-head"><div><p class="eyebrow light"><span></span> U.S. resort coverage</p><h2 id="map-title">Resorts across the United States</h2></div><div class="map-totals"><span><i class="epic"></i><b>37</b> Epic</span><span><i class="ikon"></i><b>41</b> Ikon</span><span><b>78</b> U.S. destinations</span></div></div>
+        <div class="us-map-layout"><div class="us-map" id="us-map" aria-label="U.S. state-level map of Epic and Ikon resorts"><svg viewBox="0 0 1000 590" role="img" aria-label="Map outline of the contiguous United States"><path class="us-shape" d="M71 126 118 95l76 17 54-18 63 28 97-13 67 26 67-9 66 22 64-10 48 31 86 7 31 35 58 21 34 39-22 34-48 9-32 46-55 10-25 44-74 3-55 27-73-17-62 22-58-17-70 18-66-25-62 12-46-25-64-2-40-39-43-17-17-47-47-28 9-48-37-31 19-48-21-48 27-47-17-43 43-38Z"/><path class="great-lakes" d="M684 190c22-25 51-20 63-5-21 5-36 16-51 31-11-4-16-13-12-26Zm65 22c25-18 47-9 60 4-18 4-34 14-50 28-10-7-13-19-10-32Z"/></svg><div id="map-points"></div><div class="alaska-inset"><span>AK</span><i></i></div><div class="map-tooltip" id="map-tooltip" hidden></div></div>
+          <aside class="map-inspector" id="map-inspector"><p>Select a state</p><h3>Explore by pass</h3><p>Larger circles represent more destinations. A two-color circle means both Epic and Ikon have resorts in that state.</p><div class="inspector-key"><span><i class="epic"></i>Epic Pass</span><span><i class="ikon"></i>Ikon Pass</span></div></aside>
+        </div>
+        <p class="map-source">Counts follow Epic and Ikon's current U.S. “destination” listings; some destinations include multiple mountains. Select a state to filter instructors.</p>
+      </section>
+
+      <section class="instructor-callout" id="for-instructors"><div><p class="eyebrow light"><span></span> Instructor verification</p><h2>Teach in Chinese at an official ski school?<br />Apply for a verified profile.</h2></div><div><ul><li>Create your profile for free</li><li>Show your ski school, certifications, and teaching focus</li><li>Send students back to the resort's official booking page</li></ul><a class="apply-link" href="apply-en.html">Apply for verification <span>↗</span></a></div></section>
+    </main>
+
+    <footer><div class="footer-brand"><strong>雪语 SnowLink</strong><p>Chinese-speaking ski instructor directory</p></div><p class="disclaimer">SnowLink is not a ski school and does not sell or provide lessons. Booking, pricing, payment, cancellation, and instruction are handled by each resort's official ski school. Unless expressly stated, SnowLink is not affiliated with the listed resorts, Epic, Ikon, or PSIA-AASI.</p></footer>
+
+    <div class="modal-backdrop" id="coach-modal" hidden><section class="modal coach-modal" role="dialog" aria-modal="true" aria-labelledby="modal-coach-name"><button class="modal-close" aria-label="Close">×</button><div class="modal-header"><span class="verified-badge dark">✓ Official ski school verified</span><p id="modal-resort"></p><h2 id="modal-coach-name"></h2><div class="tags" id="modal-tags"></div></div><div class="modal-body"><div class="booking-status"><span>INSTRUCTOR REQUEST POLICY</span><strong id="modal-policy"></strong></div><h3 id="modal-how-title"></h3><ol><li id="modal-step-one"></li><li id="modal-step-two"></li><li>The ski school will confirm the final assignment based on instructor availability.</li></ol><div class="request-template"><span>REQUEST TEMPLATE</span><p id="request-copy"></p><button id="copy-request">Copy template</button></div><a class="official-link" id="modal-official-link" href="#" target="_blank" rel="noopener noreferrer">Book on the resort website <span>↗</span></a><small>You are leaving SnowLink. Resort pricing and final arrangements apply.</small></div></section></div>
+
+    <script>window.SNOWLINK_LOCALE = "en";</script>
+    <script src="resorts.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
