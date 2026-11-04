@@ -7,7 +7,7 @@
 1. 登录负责接收申请的 Google 账号。
 2. 打开 [script.google.com](https://script.google.com) 并创建新项目。
 3. 将 `google-apps-script/Code.gs` 的内容复制到编辑器。
-4. 把 `configureRecipient()` 中的 `YOUR_EMAIL@example.com` 改成实际收件邮箱。
+4. `configureRecipient()` 已配置为 `linhong326326@gmail.com`。
 5. 在 Apps Script 顶部选择 `configureRecipient`，点击“运行”，完成一次授权。
 
 ## 2. 部署 Web App
@@ -36,4 +36,4 @@ window.SNOWLINK_CONFIG = {
 [雪语教练申请] 教练姓名 · 雪场名称
 ```
 
-确认正文和附件均收取成功后，再将申请入口公开。不要把实际 Gmail、Gmail 密码或 Google App Password 提交到公开仓库。部署并运行 `configureRecipient()` 后，把函数中的明文邮箱恢复为占位符；收件地址会继续保存在 Apps Script 的 Script Properties 中。
+确认正文和附件均收取成功后，再将申请入口公开。不要把 Gmail 密码或 Google App Password 写入项目文件。部署并运行 `configureRecipient()` 后，收件地址会保存在 Apps Script 的 Script Properties 中。
